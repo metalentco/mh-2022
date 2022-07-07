@@ -1,0 +1,6 @@
+type: pages
+label: Events
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: event
+empty: Noch keine Events
+sortBy: date desc

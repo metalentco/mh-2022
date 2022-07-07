@@ -1,0 +1,24 @@
+title: Programm
+icon: 🗓
+
+columns:
+  left:
+    width: 1/2
+    sections:
+      drafts:
+        extends: sections/events
+        label: Entwürfe
+        status: draft
+
+      unlisted:
+        extends: sections/events
+        label: Im Review
+        status: unlisted
+
+  right:
+    width: 1/2
+    sections:
+      listed:
+        extends: sections/events
+        label: Publiziert
+        status: listed

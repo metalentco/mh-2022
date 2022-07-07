@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Embro';
+    src: url('../fonts/Embro-Bold-Pro.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AuthenticSans';
+    src: url('../fonts/AUTHENTICSans-60.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AuthenticSans';
+    src: url('../fonts/AUTHENTICSans-90.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AuthenticSans';
+    src: url('../fonts/AUTHENTICSans-150.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AuthenticSansCondensed';
+    src: url('../fonts/AUTHENTICSans-Condensed-60.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AuthenticSansCondensed';
+    src: url('../fonts/AUTHENTICSans-Condensed-90.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AuthenticSansCondensed';
+    src: url('../fonts/AUTHENTICSans-Condensed-150.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+
+@layer base{
+
+    html{
+        @apply scroll-smooth;
+    }
+
+    body{
+        font-size: 18px;
+        
+    }
+
+    @media(min-width:1800px){
+        body{
+            font-size: 22px;   
+        }
+    }
+
+    *:not(h1,h2,h3,h4,h5, button, button *, button *:after){
+        hyphens: auto;
+    }
+
+
+    h1, h2, button{
+        @apply font-heading mt-4 uppercase;
+    }
+
+    h2{
+        @apply font-heading uppercase text-5xl lg:text-7xl text-center;
+    }
+
+    h3{
+        @apply font-heading uppercase font-bold text-3xl lg:text-5xl text-center mt-4;
+    }
+
+    h4{
+        @apply font-bold text-xl;
+    }
+
+    :root {
+        --underlineColor: #AD4F41;
+    }
+
+    a:not(.customLink){
+        background: linear-gradient(to bottom, var(--underlineColor) 0%, var(--underlineColor) 100%);
+        background-position: 0 100%;
+        background-repeat: repeat-x;
+        background-size: 2px 2px;
+    }
+
+    a:not(.customLink):hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23AD4F41' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+        background-position: 0 100%;
+        background-size: auto 4px;
+        background-repeat: repeat-x;
+        text-decoration: none;
+    }
+
+
+    .kblocks h4, h5{
+        @apply mt-24 lg:mt-32;
+    }
+    .kblocks h2{
+        @apply pt-24 lg:pt-32;
+    }
+    .kblocks h3{
+        @apply pt-24 lg:pt-32;
+    }
+    .kblocks h2 + h3{
+        @apply pt-6 lg:pt-8;
+    }
+    .kblocks h4, h5{
+        @apply mt-20;
+    }
+    .kblocks p{
+        @apply mt-10;
+    }
+    .kblocks h4 + p, .kblocks h5 + p{
+        @apply mt-4;   
+    }
+    .kblocks .large{
+        @apply text-2xl lg:text-4xl leading-snug;
+    }
+    .kblocks .medium{
+        @apply text-2xl leading-snug lg:columns-2;
+    }
+    .kblocks p:not(.large, .medium){
+        @apply md:columns-2 3xl:columns-3;
+    }
+    .kblocks figure{
+        @apply mt-20;
+    }
+    .kblocks figure img{
+        @apply rounded-[3rem] lg:rounded-[5rem];
+    }
+    .kblocks figure figcaption{
+        @apply mt-4 text-center;
+    }
+    .kblocks .image_text h4{
+        @apply mt-4 sm:mt-0;
+    }
+    .kblocks .accordion + *:not(.accordion){
+        @apply clear-both;
+    }
+}
+
+
+
+
+
+.wavy-bottom{
+    @apply after:content-[''] after:block after:w-full after:h-2 after:bg-chover;
+}
+
+.wavy-bottom:after{
+    mask: url('../img/wave.svg');
+    -webkit-mask: url('../img/wave.svg');
+}
+
+
+
+.before\:animate-spin-1::before{
+    mask: url('../img/month-1.png');
+    -webkit-mask: url('../img/month-1.png');
+}
+.before\:animate-spin-2::before{
+    mask: url('../img/month-2.png');
+    -webkit-mask: url('../img/month-2.png');
+}
+.before\:animate-spin-3::before{
+    mask: url('../img/month-3.png');
+    -webkit-mask: url('../img/month-3.png');
+}
+.before\:animate-spin-4::before{
+    mask: url('../img/month-4.png');
+    -webkit-mask: url('../img/month-4.png');
+}
+.before\:animate-spin-5::before{
+    mask: url('../img/month-5.png');
+    -webkit-mask: url('../img/month-5.png');
+}
+.before\:animate-spin-6::before{
+    mask: url('../img/month-6.png');
+    -webkit-mask: url('../img/month-6.png');
+}
+.before\:animate-spin-7::before{
+    mask: url('../img/month-7.png');
+    -webkit-mask: url('../img/month-7.png');
+}
+.before\:animate-spin-8::before{
+    mask: url('../img/month-8.png');
+    -webkit-mask: url('../img/month-8.png');
+}
+.before\:animate-spin-9::before{
+    mask: url('../img/month-9.png');
+    -webkit-mask: url('../img/month-9.png');
+}
+.before\:animate-spin-10::before{
+    mask: url('../img/month-10.png');
+    -webkit-mask: url('../img/month-10.png');
+}
+.before\:animate-spin-11::before{
+    mask: url('../img/month-11.png');
+    -webkit-mask: url('../img/month-11.png');
+}
+.before\:animate-spin-12::before{
+    mask: url('../img/month-12.png');
+    -webkit-mask: url('../img/month-12.png');
+}
+.before\:animate-spin::before{
+    animation-duration: 10s !important;
+    animation-direction: reverse !important;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+
+
+.ll{
+    fill: #FFFFFF;
+}
+
+.ll{
+    animation: pulseletters 0.6s ease infinite;
+}
+
+.ll01{
+    animation-delay: 0.1s
+}
+.ll02{
+    animation-delay: 0.2s
+}
+.ll03{
+    animation-delay: 0.3s
+}
+.ll04{
+    animation-delay: 0.4s
+}
+.ll05{
+    animation-delay: 0.5s
+}
+.ll06{
+    animation-delay: 0.6s
+}
+.ll07{
+    animation-delay: 0.7s
+}
+.ll08{
+    animation-delay: 0.8s
+}
+.ll09{
+    animation-delay: 0.9s
+}
+.ll10{
+    animation-delay: 1.0s
+}
+.ll11{
+    animation-delay: 1.1s
+}
+.ll12{
+    animation-delay: 1.2s
+}
+.ll13{
+    animation-delay: 1.3s
+}
+
+@keyframes pulseletters{
+    0%   { fill: #FFFFFF; }
+    10%   { fill: #48714D; }
+    20%  { fill: #48714D; }
+    30%  { fill: #FFFFFF; }
+}
+
+.marquee{
+    animation: marquee 0.5s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: scale(2) translate(0, 0); }
+    100% { transform: scale(2) translate(-100%, 0); }
+}
+
+
+nav li a:hover,
+.customShake:hover{
+    animation: shake 0.5s infinite;
+    display: inline-block;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

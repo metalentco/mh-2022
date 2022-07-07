@@ -1,0 +1,20 @@
+name: Bild mit Text
+wysiwyg: true
+preview: title
+icon: text
+fields:
+  title:
+    label: Titel
+    type: text
+  text:
+    label: Text
+    type: writer
+    inline: true
+  link:
+    label: Link
+    type: url
+    width: 1/2
+  link_text:
+    label: Link-Text
+    type: text
+    width: 1/2

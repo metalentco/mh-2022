@@ -1,0 +1,182 @@
+title: Event
+num: '{{ page.date.toDate("Ymd") }}'
+icon: 📖
+
+status:
+  draft:
+    label: Entwurf
+    text: Der Event kann nur von Redakteuren mit Panel-Zugang eingesehen werden.
+  unlisted:
+    label: Review
+    text: Der Event ist online und kann mit der direkten URL besucht werden. Das Team muss noch die endgültige Freigabe zur Veröffentlichung erteilen.
+  listed:
+    label: Publiziert
+    text: Der Event ist online und im Programm aufgeführt.
+
+columns:
+  main:
+    width: 3/4
+    fields:
+      availability:
+        label: Verfügbarkeit
+        type: toggle
+        width: 1/2
+        default: true
+        text:
+          - ausverkauft
+          - verfügbar
+      status:
+        label: Status
+        type: select
+        width: 1/2
+        options:
+          - Abgesagt
+          - Verschoben
+      postponed_link:
+        label: Neuer Event
+        type: select
+        options: query
+        query: site.find("home").children
+        when:
+          status: Verschoben
+      line0:
+        type: line
+      cover:
+        type: files
+        multiple: false
+        query: page.images
+      subtitle:
+        label: Untertitel
+        type: textarea
+        buttons: false
+        help: Supporter oder andere Infos
+      country:
+        label: Land
+        type: select
+        width: 1/2
+        default: ch
+        options:
+          ch: CH
+          de: DE
+          fr: FR
+          us: US
+      style:
+        label: Stil
+        type: tags
+        width: 1/2
+        max: 1
+        options:
+          - Hardrock
+          - Hip Hop
+          - Jazz
+          - Pop
+          - Rap
+          - Rock
+      warning:
+        label: Hinweis
+        type: writer
+        marks:
+          - bold
+          - italic
+          - link
+          - strike
+        nodes: false
+        help: Hinweis / Warnung zuoberst
+      line1:
+        type: line
+      ticket:
+        label: Ticket-Link
+        type: url
+        width: 1/2
+      price1:
+        label: Vorverkauf
+        type: number
+        before: CHF
+        width: 1/4
+      price2:
+        label: Abendkasse
+        type: number
+        before: CHF
+        width: 1/4
+      facebook:
+        label: Facebook
+        type: url
+        width: 1/3
+      press:
+        label: Pressefotos
+        type: files
+        width: 1/3
+        query: page.images
+      infos:
+        label: Extra-Infos
+        type: structure
+        width: 1/3
+        help: Erscheint in Tabelle zuoberst
+        fields:
+          title:
+            label: Titel
+            type: text
+          text:
+            label: Inhalt
+            type: writer
+            marks:
+              - link
+            nodes: false
+      line2:
+        type: line
+      text:
+        label: Haupttext
+        type: textarea
+        size: large
+      media:
+        type: blocks
+        fieldsets:
+          - video
+          - image
+      text_end:
+        label: Text nach Medien
+        type: textarea
+        size: small
+        help: Fakultativ
+        
+
+        
+
+  sidebar:
+    width: 1/4
+    sticky: true
+    sections:
+      meta:
+        type: fields
+        fields:
+          info:
+            label: Info
+            type: info
+            theme: negative
+            text: Event ausverkauft!
+            when:
+              availability: false
+          date:
+            label: Datum
+            type: date
+            display: DD.MM.YYYY
+          open1:
+            label: Öffnung Mühligarten & Aussenbar
+            type: time
+          open2:
+            label: Türöffnung
+            type: time
+          open3:
+            label: Konzertbeginn
+            type: time
+          location:
+            label: Spielort
+            type: select
+            default: muehle
+            options:
+              - muehle: Mühle Hunziken
+              - openair: Bühne am Teich
+          line10:
+            type: line
+          author:
+            type: users

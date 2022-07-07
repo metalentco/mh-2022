@@ -1,0 +1,22 @@
+name: Akkordeon
+wysiwyg: true
+preview: title
+icon: text
+fields:
+  title:
+    width: 3/4
+    label: Titel
+    type: text
+  checked:
+    width: 1/4
+    label: Standard
+    type: toggle
+    default: true
+    text: 
+      - "geschlossen"
+      - "aufgeklappt"
+
+  text:
+    label: Text
+    type: writer
+    inline: true

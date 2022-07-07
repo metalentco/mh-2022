@@ -1,0 +1,33 @@
+name: Liste
+wysiwyg: true
+preview: title
+icon: bars
+fields:
+  details:
+    label: Einträge
+    type: structure
+    fields:
+      title:
+        label: Titel
+        type: text
+        required: true
+      choice:
+        width: 1/4
+        label: Link oder Datei
+        type: toggle
+        text: 
+          - "Link"
+          - "Datei"
+      link:
+        width: 3/4
+        label: Link
+        type: url
+        when:
+          choice: false
+      file:
+        width: 3/4
+        label: Datei
+        type: files
+        multiple: false
+        when:
+          choice: true

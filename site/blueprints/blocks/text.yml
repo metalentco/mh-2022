@@ -1,0 +1,21 @@
+name: field.blocks.text.name
+icon: text
+wysiwyg: true
+preview: text
+fields:
+  level:
+    label: Grösse
+    type: select
+    empty: false
+    default: "normal"
+    width: 1/6
+    options:
+      - normal
+      - medium
+      - large
+  text:
+    label: Text
+    type: writer
+    inline: true
+    width: 5/6
+    placeholder: field.blocks.text.placeholder

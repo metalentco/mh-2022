@@ -1,0 +1,30 @@
+title: Standard
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          cbackground:
+            label: Farbe – Hintergrund
+            type: text
+            help: "\#9FAEA1"
+          cbase:
+            label: Farbe – Basis (Text)
+            type: text
+            help: "\#fff"
+          clink:
+            label: Farbe – Links (und Auszeichnungne)
+            type: text
+            help: "\#AD4F41"
+          chover:
+            label: Farbe – Link-Hover (Sekundäre Auszeichnungen)
+            type: text
+            help: "\#48714D"
+  sidebar:
+    width: 1/3
+    sections:
+      files:
+        type: files
