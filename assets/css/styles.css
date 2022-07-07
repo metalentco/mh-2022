@@ -786,6 +786,10 @@ a:not(.customLink):hover {
   pointer-events: auto;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }

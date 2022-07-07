@@ -8,19 +8,19 @@ columns:
         type: fields
         fields:
           cbackground:
-            label: Farbe – Hintergrund
-            type: text
-            help: "\#9FAEA1"
+            type: colors
+            label: Colors (alpha)
+            alpha: true
           cbase:
-            label: Farbe – Basis (Text)
-            type: text
+            label: Farbe - Basis (Text)
+            type: colors
             help: "\#fff"
           clink:
-            label: Farbe – Links (und Auszeichnungne)
+            label: Farbe - Links (und Auszeichnungne)
             type: text
             help: "\#AD4F41"
           chover:
-            label: Farbe – Link-Hover (Sekundäre Auszeichnungen)
+            label: Farbe - Link-Hover (Sekundäre Auszeichnungen)
             type: text
             help: "\#48714D"
   sidebar:
