@@ -10,7 +10,7 @@ var gulp          = require('gulp');
 gulp.task('serve', gulp.series( function() {
   connect.server({}, function() {
     browserSync({
-        proxy: '127.0.0.1:8000'
+        proxy: 'https://mh-2022.test',
     });
   });
 

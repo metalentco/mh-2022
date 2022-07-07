@@ -6,9 +6,8 @@
     <body class="bg-cbackground">
         <div class="text-cbase">
             <?php snippet('header') ?>
-
             <main class="pt-20">
-                <div class="max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
+            <div class="max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
                     <!-- HERO -->
                     <div class="relative">
                         <div class="max-w-2xl mx-auto">

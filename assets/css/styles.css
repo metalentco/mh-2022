@@ -1307,6 +1307,10 @@ a:not(.customLink):hover {
   padding-bottom: 0.25rem;
 }
 
+.pt-80 {
+  padding-top: 20rem;
+}
+
 .text-left {
   text-align: left;
 }
