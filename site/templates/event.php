@@ -5,7 +5,7 @@
     </head>
     <body class="bg-cbackground">
         <?php snippet('header') ?>
-            <div class="min-h-[90vh] w-full bg-[url('<?= $page->cover()->toFile()->url() ?>')] bg-cover bg-center flex justify-end flex-col">
+            <div class="min-h-[90vh] w-full bg-cover bg-center flex justify-end flex-col bg-chover" style="background-image: url('<?php if($page->cover()->isNotEmpty()){ echo $page->cover()->toFile()->url(); } ?>')">
             <!-- @konradm todo <div class="min-h-[90vh] w-full bg-[url('')]"> -->
                 <div class="text-white mb-2 flex items-end justify-between w-full max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
                     <div>
