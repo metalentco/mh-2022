@@ -59,11 +59,17 @@
     .fill-clink{
         fill: <?= page("home")->clink() ?>
     }
+    .before\:bg-clink::before{
+        background-color: <?= page("home")->clink() ?>
+    }
 
 
 
 
     .text-chover{
+        color: <?= page("home")->chover() ?>
+    }
+    .group:hover .group-hover\:text-chover{
         color: <?= page("home")->chover() ?>
     }
     .bg-chover{

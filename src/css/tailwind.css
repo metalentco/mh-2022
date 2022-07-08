@@ -173,7 +173,22 @@
     -webkit-mask: url('../img/wave.svg');
 }
 
+.mask-before:before{
+    mask: url('../img/footer-mask.svg');
+    -webkit-mask: url('../img/footer-mask.svg');
+}
 
+.flag-mask{
+    mask: url('../img/flag-mask.svg');
+    -webkit-mask: url('../img/flag-mask.svg');
+    mask-size: contain;
+    -webkit-mask-size: contain;
+}
+
+.stripe-mask{
+    mask: url('../img/stripe-mask.svg');
+    -webkit-mask: url('../img/stripe-mask.svg');
+}
 
 .before\:animate-spin-1::before{
     mask: url('../img/month-1.png');

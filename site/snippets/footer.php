@@ -1,5 +1,5 @@
-<footer>
-    <div class="max-w-7xl mx-auto px-3 md:px-6 mt-20">
+<footer class="text-cbase">
+    <div class="max-w-7xl mx-auto px-3 md:px-6 mt-60">
         <div class="max-w-md mx-auto text-center">
             <p class="uppercase font-heading tracking-wider text-cbase">Trage dich in den Newsletter ein</p>
             <form class="mt-4 sm:flex sm:max-w-md">
@@ -17,41 +17,38 @@
             </form>
         </div>
     </div>
-    <div class="bg-[url('https://placehold.co/1000x200/48714D/58714D')] bg-cover bg-top">
-
-        <div class="max-w-7xl mx-auto px-3 md:px-6 mt-20 pt-2">
+    <div class="mt-20 bg-clink bg-top mask-before bg-no-repeat bg-left-bottom pb-40 sm:pb-20 xl:pb-0 bg-contain sm:bg-[length:80%] lg:bg-[length:70%] xl:bg-[length:50%] 2xl:bg-[length:800px] before:bg-clink before:content-[''] before:-top-6 before:h-6 before:w-full before:block before:relative" <?php if(page('home')->footer_image()->isNotEmpty()) {echo "style=background-image:url('".page('home')->footer_image()->toFile()->url()."')";}?>>
+        <div class="max-w-7xl mx-auto px-3 md:px-6">
             <div class="ml-auto md:max-w-xl">
-
-                
-                <ul class="flex justify-between my-8">
+                <ul class="flex justify-between mb-8">
                     <li>
                         <a href="#" class="customLink font-heading uppercase tracking-wider inline-block py-3">Programm</a>
                     </li>
-                    <li>
-                        <a href="#" class="customLink font-heading uppercase tracking-wider inline-block py-3">Galerie</a>
-                    </li>
-                    <li>
-                        <a href="#" class="customLink font-heading uppercase tracking-wider inline-block py-3">Mühle</a>
-                        <ul>
-                            <li>
-                                <a href="#" class="customLink py-1 inline-block">Info</a>
-                            </li>
-                            <li>
-                                <a href="#" class="customLink py-1 inline-block">Team</a>
-                            </li>
-                            <li>
-                                <a href="#" class="customLink py-1 inline-block">Geschichte</a>
-                            </li>
-                            <li>
-                                <a href="#" class="customLink py-1 inline-block">Kontakt</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="customLink font-heading uppercase tracking-wider inline-block py-3">Shop</a>
-                    </li>
+
+
+                    <?php
+                        $items = $pages->listed();
+                        if($items->isNotEmpty()):
+                    ?>
+                        <?php foreach($items as $item): ?>
+                            <?php if($item != "programm"): ?>
+                                <li>
+                                    <a href="<?= $item->url() ?>" class="customLink font-heading uppercase tracking-wider inline-block py-3"><?= $item->title(); ?></a>
+                                    <?php if($item->hasChildren() && $item->isNotEmpty()): ?>
+                                        <ul>
+                                            <?php foreach($item->children()->listed() as $subitem): ?>
+                                                <li>
+                                                    <a href="<?= $subitem->url(); ?>" class="customLink py-1 inline-block"><?= $subitem->title(); ?></a>
+                                                </li>  
+                                            <?php endforeach ?>
+                                        </ul>
+                                    <?php endif ?>
+                                </li>
+                            <?php endif ?>
+                        <?php endforeach ?>
+                    <?php endif ?>
                 </ul>
-                <div class="py-8">
+                <div class="py-8 text-right">
                     <a href="#" class="mr-8 inline-block font-bold"><span class="py-4">Facebook</span></a>
                     <a href="#" class="font-bold inline-block"><span class="py-4">Instagram</span></a>
                 </div>

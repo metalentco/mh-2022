@@ -18,20 +18,30 @@ columns:
     width: 3/4
     fields:
       availability:
-        label: Verfügbarkeit
+        label: Tickets
         type: toggle
         width: 1/2
         default: true
         text:
           - ausverkauft
-          - verfügbar
-      status:
+          - erhältlich
+      status_event:
         label: Status
         type: select
         width: 1/2
         options:
           - Abgesagt
           - Verschoben
+      warning:
+        label: Hinweis
+        type: writer
+        marks:
+          - bold
+          - italic
+          - link
+          - strike
+        nodes: false
+        help: Hinweis / Warnung zuoberst
       postponed_link:
         label: Neuer Event
         type: select
@@ -72,16 +82,6 @@ columns:
           - Pop
           - Rap
           - Rock
-      warning:
-        label: Hinweis
-        type: writer
-        marks:
-          - bold
-          - italic
-          - link
-          - strike
-        nodes: false
-        help: Hinweis / Warnung zuoberst
       line1:
         type: line
       ticket:

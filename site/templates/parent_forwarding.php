@@ -1,0 +1,1 @@
+<?php go($page->forwarding(), 301) ?>

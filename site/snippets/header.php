@@ -1,9 +1,21 @@
 <header class="fixed w-full z-30 pointer-events-none">
     <div class="relative">
-        <div class="max-w-full 2xl:max-w-[140rem] mx-auto px-3 md:px-6 flex justify-between pt-4 md:pt-8 ">
+        <div class="max-w-full 2xl:max-w-[140rem] mx-auto px-1 md:px-6 flex justify-between pt-2 md:pt-8 ">
             <div>
+
+                <?php if( page() == "programm" && page('home')->stoerer()->isTrue() ): ?>
+                    <a href="<?= page('home')->stoerer_link() ?>" class="customLink block rounded-full bg-chover w-32 h-32 sm:w-48 sm:h-48 text-center z-50 pointer-events-auto relative before:w-full before:h-full before:rounded-full before:bg-clink before:block before:absolute before:scale-0 hover:before:scale-100 before:transition before:duration-500 hover:rotate-[360deg] transition" <?php if( page('home')->stoerer_link()->isEmpty() ){echo "style='cursor:default'"; } ?>>
+                        <div class="m-auto top-1/2 -translate-y-1/2 relative">
+                            <div class="-skew-x-12 text-xl sm:text-3xl font-bold">
+                                <div class="-rotate-12">
+                                    <?= page('home')->stoerer_text() ?>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <?php else: ?>
                 <a href="<?= $site->url(); ?>" class="customLink customShake block pointer-events-auto">
-                    <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 685" style="enable-background:new 0 0 445 685;" xml:space="preserve" class="w-12 md:w-24">
+                    <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 685" style="enable-background:new 0 0 445 685;" xml:space="preserve" class="w-10 md:w-20">
                         <path class="fill-clink" d="M245.3,0.6c1,0,2.1,0.8,3.2,0.9c5.3,4.2,7.8,9.9,13.9,12.2c2.8,4.4,7.5,7.4,7.6,13c1.3,20.5-7,7.4,1.5,33.5
                             c-4.1,5.9-0.7,11.7-6.4,16.8c0.2,9.2-3.4,18.2-5.3,26.8c0.7,8.7-7.1,6.9-2.9,16.6c1,0.3,2.4,1.6,3.1,2.8c3-2.8,7.3-3.9,10.1-6.4
                             c11.8-5.1,22.3-14.9,36.2-13.3c13.1-5.9,24.3-7.4,37.9-1.9c3.6-0.4,6.6-4.7,10.3,0c15.7,0.1,12.7,1.6,25-0.4
@@ -41,6 +53,7 @@
                             c5-0.8,4-7,4-10.5c4.2-8.9,9.5-23.3,21.3-25.1c1-6.9,11.6-5.9,13.3-5.2C232.3,10.9,238.5,3,245.3,0.6"/>
                     </svg>
                 </a>
+                <?php endif ?>
             </div>
             <!-- <div class="text-center">
                 <h1>TITLE</h1>
@@ -50,9 +63,9 @@
                     <a href="#">Subnav</a>
                 </nav>
             </div> -->
-            <div>
+            <div class="mr-4">
                 <a href="#" onclick="toggle()" class="customLink pointer-events-auto">
-                    <svg viewBox="0 0 84 51" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 py-2 md:w-20 md:mt-12">
+                    <svg viewBox="0 0 84 51" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 py-4 md:w-20 md:mt-4">
                         <path class="fill-clink" d="M81.4119 50.2807C82.8569 50.2807 82.9199 49.6658 83.0574 48.9855C83.1949 48.3051 82.7942 40.8713 82.339 39.9814C81.8838 39.0915 80.2927 39.1458 80.2927 39.1458C80.2927 39.1458 3.13955 38.0177 1.70289 38.338C0.266235 38.6583 0.057392 40.0622 0.057392 40.0622C0.057392 40.0622 -0.0167548 47.0986 0.341027 48.2912C0.698808 49.4838 1.26899 50.0615 2.31262 50.2807C3.35624 50.4999 81.4119 50.2807 81.4119 50.2807Z"/>
                         <path class="fill-clink" d="M82.0573 10.9855C82.0573 10.9855 81.8556 12.2807 80.4025 12.2807C80.4025 12.2807 4.11882 12.2908 2.32517 12.2807C0.531509 12.2706 0.057251 11.7933 0.057251 10.9855C0.057251 10.9855 0.057251 2.10194 0.057251 1.46608C0.057251 0.830229 0.0572177 0.0921636 1.22638 0.00577264C2.39555 -0.0806183 77.394 0.830548 78.8384 0.86114C80.2828 0.891732 81.178 0.939343 81.4389 2.08549C81.6999 3.23163 82.0573 10.9924 82.0573 10.9924"/>
                         <path class="fill-clink" d="M0.0571506 20.2953C0.0571506 20.2953 0.267614 19 1.78451 19L79.6897 19C79.6897 19 82.0572 19.5 82.0572 21V29.8146C82.0572 29.8146 81.8379 30.6224 80.3298 30.9427C78.8217 31.2631 3.99701 30.203 2.95941 30.135C1.92182 30.067 0.897254 30.0238 0.897266 28.5188C0.897301 24.2365 -0.267554 23.2331 0.0571506 20.2883"/>

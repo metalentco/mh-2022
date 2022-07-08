@@ -8,10 +8,10 @@
 <div class="top-0 w-full fixed h-full bg-clink z-50 text-cbase hidden" id="navigation">
     <div class="fixed w-full z-30">
         <div class="relative">
-            <div class="max-w-full 2xl:max-w-[140rem] mx-auto px-3 md:px-6 flex justify-between pt-4 md:pt-8 ">
+            <div class="max-w-full 2xl:max-w-[140rem] mx-auto px-1 md:px-6 flex justify-between pt-2 md:pt-8 ">
                 <div>
                     <a href="<?= $site->url() ?>" class="customLink customShake block">
-                        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 685" style="enable-background:new 0 0 445 685;" xml:space="preserve" class="w-12 md:w-24">
+                        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 685" style="enable-background:new 0 0 445 685;" xml:space="preserve" class="w-10 md:w-20">
                             <path class="fill-cbase" d="M245.3,0.6c1,0,2.1,0.8,3.2,0.9c5.3,4.2,7.8,9.9,13.9,12.2c2.8,4.4,7.5,7.4,7.6,13c1.3,20.5-7,7.4,1.5,33.5
                                 c-4.1,5.9-0.7,11.7-6.4,16.8c0.2,9.2-3.4,18.2-5.3,26.8c0.7,8.7-7.1,6.9-2.9,16.6c1,0.3,2.4,1.6,3.1,2.8c3-2.8,7.3-3.9,10.1-6.4
                                 c11.8-5.1,22.3-14.9,36.2-13.3c13.1-5.9,24.3-7.4,37.9-1.9c3.6-0.4,6.6-4.7,10.3,0c15.7,0.1,12.7,1.6,25-0.4
@@ -50,9 +50,9 @@
                         </svg>
                     </a>
                 </div>
-                <div>
+                <div class="mr-4">
                     <a href="#" onclick="toggle()" class="customLink">
-                        <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 py-2 md:w-20 md:mt-12">
+                        <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-14 py-4 md:py-0 md:w-20 md:mt-4">
                             <path class="fill-cbase" d="M58.5892 67.3036C59.611 68.3345 60.0904 67.9407 60.6687 67.5535C61.247 67.1662 66.2202 61.5773 66.5275 60.6178C66.8349 59.6582 65.6714 58.5618 65.6714 58.5618C65.6714 58.5618 11.9136 2.71823 10.6713 1.92188C9.42888 1.12552 8.28851 1.97803 8.28851 1.97803C8.28851 1.97803 3.26062 6.94468 2.67031 8.05069C2.08 9.15669 2.07464 9.9756 2.65761 10.8765C3.24057 11.7773 58.5892 67.3036 58.5892 67.3036Z" fill="white"/>
                             <path class="fill-cbase" d="M2.95631 60.8871C2.95631 60.8871 2.18925 59.813 3.26186 58.7309L58.3492 3.15551C58.3492 3.15551 60.3767 1.82336 61.4374 2.89341L67.6703 9.18151C67.6703 9.18151 68.0864 9.91415 67.2465 11.2185C66.4066 12.5229 12.748 65.1445 11.9663 65.8361C11.1845 66.5278 10.4295 67.2279 9.36525 66.1542C6.33726 63.0994 4.80409 63.2146 2.95138 60.8822" fill="white"/>
                         </svg>                                
@@ -104,11 +104,6 @@
                     <?php endif ?>
                 <?php endforeach ?>
             <?php endif ?>
-
-
-            <li>
-                <a href="https://muhle-hunziken.myshopify.com/" target="_blank" class="customLink font-heading uppercase inline-block my-2 sm:my-6">Shop</a>
-            </li>
         </ul>
     </nav>
 </div>

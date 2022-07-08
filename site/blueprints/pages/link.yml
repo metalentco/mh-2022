@@ -1,0 +1,6 @@
+title: Weiterleitung
+
+fields:
+    link:
+      label: Link URL
+      type: url
