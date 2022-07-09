@@ -980,6 +980,10 @@ a:not(.customLink):hover {
   margin-top: 4rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1020,12 +1024,28 @@ a:not(.customLink):hover {
   height: 20rem;
 }
 
+.h-\[90vh\] {
+  height: 90vh;
+}
+
+.h-\[80vh\] {
+  height: 80vh;
+}
+
+.h-\[75vh\] {
+  height: 75vh;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
 
 .min-h-\[90vh\] {
   min-height: 90vh;
+}
+
+.min-h-\[80vh\] {
+  min-height: 80vh;
 }
 
 .w-full {
@@ -1175,6 +1195,10 @@ a:not(.customLink):hover {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -1191,6 +1215,10 @@ a:not(.customLink):hover {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.justify-self-start {
+  justify-self: start;
 }
 
 .overflow-hidden {
@@ -2351,6 +2379,11 @@ nav li a:hover,
     float: left;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:mt-4 {
     margin-top: 1rem;
   }
@@ -2371,8 +2404,16 @@ nav li a:hover,
     margin-top: 0.5rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:h-8 {
     height: 2rem;
+  }
+
+  .md\:h-\[90vh\] {
+    height: 90vh;
   }
 
   .md\:w-20 {
@@ -2397,6 +2438,10 @@ nav li a:hover,
 
   .md\:max-w-xl {
     max-width: 36rem;
+  }
+
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
   }
 
   .md\:flex-nowrap {

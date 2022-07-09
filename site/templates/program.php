@@ -318,7 +318,7 @@
                                             <span class="font-sansC md:font-extralight xl:font-sans uppercase mr-[-4px] text-[70%] md:text-[80%] xl:text-[78%] relative top-[-0.2rem] sm:top-[-0.3rem] md:top-[-0.35rem] xl:top-[-0.55rem] 3xl:top-[-0.95rem] border-white border-b-[0.1rem] sm:border-b-2 md:border-b-2 xl:border-b-[0.2rem] 3xl:border-b-[0.3rem] inline-block leading-[0.9em] md:leading-[0.8em]"><?= substr(strval($event->date()->toDate('D')), 0, -1); ?></span>
                                             <span class="font-sansC md:font-extralight"><?= $event->date()->toDate('j.n.'); ?></span>
                                         </div>
-                                        <div class="text-clink <?= $stripe_mask ?>">
+                                        <div class="text-clink <?= $stripe_mask ?> w-full">
                                             <h2 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-2xl md:text-4xl xl:text-6xl 3xl:text-[6rem] group-hover:text-chover text-left"><?= $event->title(); ?></h2>
                                             <div class="mt-1 md:mt-2 xl:mt-4 md:text-xl xl:text-2xl 3xl:text-3xl"><?= $event->subtitle(); ?></div>
                                         </div>
