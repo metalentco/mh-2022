@@ -22,7 +22,7 @@
                 </div>
             <?php endif ?>
             
-            <a href="#" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover">
+            <a href="#" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                 <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
                 <span class="group-hover:opacity-0">Ticket kaufen</span>
             </a>
@@ -58,7 +58,7 @@
 
 
 
-                    <a href="" type="submit" class="block customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover">
+                    <a href="" type="submit" class="block customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                         <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
                         <span class="group-hover:opacity-0">Ticket kaufen</span>
                     </a>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
 
-                        <div class="">
+                        <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">
                                 <dt>Speichern!</dt>
                                 <dd><a href="#">Facebook</a> &middot; <a href="#">Kalender</a></dd>
