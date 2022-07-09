@@ -57,9 +57,9 @@
 
 @layer base{
 
-    /* html{
+    html{
         @apply scroll-smooth;
-    } */
+    }
 
     body{
         font-size: 18px;
