@@ -302,7 +302,7 @@
                                 $space = "";
                                 if($event->indexOf() > 0){
                                     if($event->date()->toDate('n') != $events->nth($event->indexOf()-1)->date()->toDate('n')){
-                                        $space = "mt-48 first-of-type:before:hidden before:content-[''] before:w-80 before:h-80 before:absolute before:bg-chover before:opacity-20 before:left-[-6rem] before:top-[-5rem] before:animate-spin before:animate-spin-".$event->date()->toDate('n');
+                                        $space = "mt-48 first-of-type:before:hidden before:w-80 before:h-80 before:absolute before:bg-chover before:opacity-20 before:left-[-6rem] before:top-[-5rem] before:animate-spinB before:animate-spinB-".$event->date()->toDate('n');
                                     }
                                 }
                                 $stripe_mask = "";
@@ -319,7 +319,7 @@
                                             <span class="font-sansC md:font-extralight"><?= $event->date()->toDate('j.n.'); ?></span>
                                         </div>
                                         <div class="text-clink <?= $stripe_mask ?>">
-                                            <h2 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] xl:pt-0 md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-2xl md:text-4xl xl:text-6xl 3xl:text-[6rem] group-hover:text-chover text-left"><?= $event->title(); ?></h2>
+                                            <h2 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-2xl md:text-4xl xl:text-6xl 3xl:text-[6rem] group-hover:text-chover text-left"><?= $event->title(); ?></h2>
                                             <div class="mt-1 md:mt-2 xl:mt-4 md:text-xl xl:text-2xl 3xl:text-3xl"><?= $event->subtitle(); ?></div>
                                         </div>
                                     </div>

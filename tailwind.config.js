@@ -15,6 +15,9 @@ module.exports = {
             screens: {
                 '3xl': '1800px'
             },
+            animation: {
+                'spinB': 'spinB 3s linear infinite'
+            }
         }
     },
     variants: {},

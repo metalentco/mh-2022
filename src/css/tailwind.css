@@ -58,7 +58,7 @@
 @layer base{
 
     html{
-        /* @apply scroll-smooth; */
+        @apply scroll-smooth;
     }
 
     body{
@@ -190,63 +190,76 @@
     -webkit-mask: url('../img/stripe-mask.svg');
 }
 
-.before\:animate-spin-1::before{
+
+
+.before\:animate-spinB-1::before{
     mask: url('../img/month-1.png');
     -webkit-mask: url('../img/month-1.png');
 }
-.before\:animate-spin-2::before{
+.before\:animate-spinB-2::before{
     mask: url('../img/month-2.png');
     -webkit-mask: url('../img/month-2.png');
 }
-.before\:animate-spin-3::before{
+.before\:animate-spinB-3::before{
     mask: url('../img/month-3.png');
     -webkit-mask: url('../img/month-3.png');
 }
-.before\:animate-spin-4::before{
+.before\:animate-spinB-4::before{
     mask: url('../img/month-4.png');
     -webkit-mask: url('../img/month-4.png');
 }
-.before\:animate-spin-5::before{
+.before\:animate-spinB-5::before{
     mask: url('../img/month-5.png');
     -webkit-mask: url('../img/month-5.png');
 }
-.before\:animate-spin-6::before{
+.before\:animate-spinB-6::before{
     mask: url('../img/month-6.png');
     -webkit-mask: url('../img/month-6.png');
 }
-.before\:animate-spin-7::before{
+.before\:animate-spinB-7::before{
     mask: url('../img/month-7.png');
     -webkit-mask: url('../img/month-7.png');
 }
-.before\:animate-spin-8::before{
+.before\:animate-spinB-8::before{
     mask: url('../img/month-8.png');
     -webkit-mask: url('../img/month-8.png');
 }
-.before\:animate-spin-9::before{
+.before\:animate-spinB-9::before{
     mask: url('../img/month-9.png');
     -webkit-mask: url('../img/month-9.png');
 }
-.before\:animate-spin-10::before{
+.before\:animate-spinB-10::before{
     mask: url('../img/month-10.png');
     -webkit-mask: url('../img/month-10.png');
 }
-.before\:animate-spin-11::before{
+.before\:animate-spinB-11::before{
     mask: url('../img/month-11.png');
     -webkit-mask: url('../img/month-11.png');
 }
-.before\:animate-spin-12::before{
+.before\:animate-spinB-12::before{
     mask: url('../img/month-12.png');
     -webkit-mask: url('../img/month-12.png');
 }
-.before\:animate-spin::before{
+.before\:animate-spinB::before{
     animation-duration: 10s !important;
-    animation-direction: reverse !important;
+    /* animation-direction: reverse !important; */
     mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
 }
 
+@-webkit-keyframes spinB {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  @keyframes spinB {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
 
 
 .ll{

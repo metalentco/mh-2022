@@ -417,8 +417,8 @@ video {
   height: auto;
 }
 
-html{
-  /* @apply scroll-smooth; */
+html {
+  scroll-behavior: smooth;
 }
 
 body{
@@ -838,6 +838,14 @@ a:not(.customLink):hover {
   left: 18%;
 }
 
+.left-\[-6rem\] {
+  left: -6rem;
+}
+
+.top-\[-5rem\] {
+  top: -5rem;
+}
+
 .bottom-5 {
   bottom: 1.25rem;
 }
@@ -1008,6 +1016,10 @@ a:not(.customLink):hover {
   height: 1.75rem;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1042,6 +1054,10 @@ a:not(.customLink):hover {
 
 .w-\[64\%\] {
   width: 64%;
+}
+
+.w-80 {
+  width: 20rem;
 }
 
 .min-w-0 {
@@ -1110,6 +1126,23 @@ a:not(.customLink):hover {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
 }
 
 .cursor-pointer {
@@ -1231,11 +1264,6 @@ a:not(.customLink):hover {
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\'\)\] {
   background-image: url('');
 }
@@ -1332,11 +1360,6 @@ a:not(.customLink):hover {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .pt-\[0\.8rem\] {
@@ -1643,74 +1666,86 @@ a:not(.customLink):hover {
   -webkit-mask: url('../img/stripe-mask.svg');
 }
 
-.before\:animate-spin-1::before{
+.before\:animate-spinB-1::before{
   mask: url('../img/month-1.png');
   -webkit-mask: url('../img/month-1.png');
 }
 
-.before\:animate-spin-2::before{
+.before\:animate-spinB-2::before{
   mask: url('../img/month-2.png');
   -webkit-mask: url('../img/month-2.png');
 }
 
-.before\:animate-spin-3::before{
+.before\:animate-spinB-3::before{
   mask: url('../img/month-3.png');
   -webkit-mask: url('../img/month-3.png');
 }
 
-.before\:animate-spin-4::before{
+.before\:animate-spinB-4::before{
   mask: url('../img/month-4.png');
   -webkit-mask: url('../img/month-4.png');
 }
 
-.before\:animate-spin-5::before{
+.before\:animate-spinB-5::before{
   mask: url('../img/month-5.png');
   -webkit-mask: url('../img/month-5.png');
 }
 
-.before\:animate-spin-6::before{
+.before\:animate-spinB-6::before{
   mask: url('../img/month-6.png');
   -webkit-mask: url('../img/month-6.png');
 }
 
-.before\:animate-spin-7::before{
+.before\:animate-spinB-7::before{
   mask: url('../img/month-7.png');
   -webkit-mask: url('../img/month-7.png');
 }
 
-.before\:animate-spin-8::before{
+.before\:animate-spinB-8::before{
   mask: url('../img/month-8.png');
   -webkit-mask: url('../img/month-8.png');
 }
 
-.before\:animate-spin-9::before{
+.before\:animate-spinB-9::before{
   mask: url('../img/month-9.png');
   -webkit-mask: url('../img/month-9.png');
 }
 
-.before\:animate-spin-10::before{
+.before\:animate-spinB-10::before{
   mask: url('../img/month-10.png');
   -webkit-mask: url('../img/month-10.png');
 }
 
-.before\:animate-spin-11::before{
+.before\:animate-spinB-11::before{
   mask: url('../img/month-11.png');
   -webkit-mask: url('../img/month-11.png');
 }
 
-.before\:animate-spin-12::before{
+.before\:animate-spinB-12::before{
   mask: url('../img/month-12.png');
   -webkit-mask: url('../img/month-12.png');
 }
 
-.before\:animate-spin::before{
+.before\:animate-spinB::before{
   -webkit-animation-duration: 10s !important;
           animation-duration: 10s !important;
-  animation-direction: reverse !important;
+  /* animation-direction: reverse !important; */
   mask-size: contain;
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
+}
+
+@-webkit-keyframes spinB {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spinB {
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 .ll{
@@ -2062,24 +2097,10 @@ nav li a:hover,
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-@-webkit-keyframes spin {
-  to {
-    content: var(--tw-content);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  to {
-    content: var(--tw-content);
-    transform: rotate(360deg);
-  }
-}
-
-.before\:animate-spin::before {
+.before\:animate-spinB::before {
   content: var(--tw-content);
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  -webkit-animation: spinB 3s linear infinite;
+          animation: spinB 3s linear infinite;
 }
 
 .before\:rounded-full::before {
@@ -2558,6 +2579,14 @@ nav li a:hover,
 
   .xl\:pt-0 {
     padding-top: 0px;
+  }
+
+  .xl\:pt-1 {
+    padding-top: 0.25rem;
+  }
+
+  .xl\:pt-0\.5 {
+    padding-top: 0.125rem;
   }
 
   .xl\:font-sans {
