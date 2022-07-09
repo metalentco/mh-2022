@@ -1,0 +1,37 @@
+title: Kontakt
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          submenu:
+            type: structure
+            label: Untermenu (Scroll)
+            fields:
+              link:
+                label: Verlinkung zu Titel
+                type: select
+                options: query
+                query:
+                  fetch: page.main_content.form.toBlocks.filterBy("level", "in", ["h2", "h3"])
+                  text: "{{ block.text }}" 
+                  value: "{{ block.text.slug }}"
+              title:
+                label: Bezeichnung
+                type: text
+          main_content:
+            label: Inhalt
+            type: blocks
+            fieldsets:
+              - heading
+              - text
+              - list
+              - image
+              - video
+              - image_text
+              - accordion
+              - list_details
+              - text_block_mini

@@ -2,6 +2,21 @@
 <html lang="de">
     <head>
         <?php snippet('head') ?>
+        <style>
+            .coverImage{
+                background-image: url( <?= $page->cover()->toFile()->resize(1000)->url() ?>);
+            }
+            @media(min-width: 1024px){
+                .coverImage{
+                    background-image: url( <?= $page->cover()->toFile()->resize(1500)->url() ?>);
+                }
+            }
+            @media(min-width: 1536px){
+                .coverImage{
+                    background-image: url( <?= $page->cover()->toFile()->resize(2500)->url() ?>);
+                }
+            }
+        </style>
     </head>
     <body class="bg-cbackground text-cbase">
         <?php snippet('header') ?>
@@ -11,25 +26,27 @@
             <?php if( $page->status_event()->isNotEmpty() ): ?>
                 <div class="absolute -bottom-10 left-2">
                     <div class="-skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-bottom-1 before:rounded-full before:z-10">
-                        <div class="pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none"><?= $page->status_event() ?></div>
+                        <div class="flag"><?= $page->status_event() ?></div>
                     </div>
                 </div>
             <?php elseif( $page->availability()->isFalse() ): ?>
                 <div class="absolute -bottom-10 left-2">
                     <div class="-skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-bottom-1 before:rounded-full before:z-10">
-                        <div class="pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none">Ausverkauft</div>
+                        <div class="flag">Ausverkauft</div>
                     </div>
                 </div>
             <?php endif ?>
             
+            <?php if( $page->ticket()->isNotEmpty() ): ?>
             <a href="<?= $page->ticket() ?>" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                 <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
                 <span class="group-hover:opacity-0">Ticket kaufen</span>
             </a>
+            <?php endif ?>
             
             </div>
         </div>
-        <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top" style="background-image: url('<?php if($page->cover()->isNotEmpty()){ echo $page->cover()->toFile()->url(); } ?>')">
+        <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top <?php if($page->cover()->isNotEmpty()){ echo "coverImage"; } ?>">
             <!-- @konradm todo <div class="min-h-[90vh] w-full bg-[url('')]"> -->
             <div class="text-white mb-2 flex items-end justify-between w-full max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
                 <div>
@@ -44,24 +61,25 @@
                 <div class="mb-3 shrink-0 hidden sm:block relative">
                     <?php if( $page->status_event()->isNotEmpty() ): ?>
                         <div class="absolute -top-10 left-2">
-                            <div class="skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-top-1 before:rounded-full before:z-10">
-                                <div class="pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none"><?= $page->status_event() ?></div>
+                            <div class="flag-container">
+                                <div class="flag"><?= $page->status_event() ?></div>
                             </div>
                         </div>
                     <?php elseif( $page->availability()->isFalse() ): ?>
                         <div class="absolute -top-10 left-2">
-                            <div class="skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-top-1 before:rounded-full before:z-10">
-                                <div class="pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none">Ausverkauft</div>
+                            <div class="flag-container">
+                                <div class="flag">Ausverkauft</div>
                             </div>
                         </div>
                     <?php endif ?>
 
 
-
+                    <?php if( $page->ticket()->isNotEmpty() ): ?>
                     <a href="<?= $page->ticket() ?>" type="submit" class="block customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                         <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
                         <span class="group-hover:opacity-0">Ticket kaufen</span>
                     </a>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
@@ -100,55 +118,67 @@
 
 
                     <dl class="w-full sm:w-1/2">
+                        <?php if( $page->open1()->isNotEmpty() ): ?>
                         <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">
                                 <dt>Öffnung Mühlegarten & Aussenbar</dt>
                                 <dd><?= $page->open1()->time()->toDate('H.i'); ?></dd>
                             </div>
                         </div>
+                        <?php endif ?>
                         
+                        <?php if( $page->open2()->isNotEmpty() ): ?>
                         <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">
                                 <dt>Türöffnung</dt>
                                 <dd><?= $page->open2()->time()->toDate('H.i'); ?></dd>
                             </div>
                         </div>
+                        <?php endif ?>
 
+                        <?php if( $page->open3()->isNotEmpty() ): ?>
                         <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">
                                 <dt>Konzertbeginn</dt>
                                 <dd><?= $page->open3()->time()->toDate('H.i'); ?></dd>
                             </div>
                         </div>
+                        <?php endif ?>
 
+                        <?php if( $page->press()->isNotEmpty() ): ?>
                         <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">
-                                <dt>Pressefoto</dt>
-                                <dd><a href="#">Download</a></dd>
+                                <dt>Pressefotos</dt>
+                                <dd><a href="<?= $page->press()->toFile()->url() ?>" target="_blank">Download</a></dd>
                             </div>
                         </div>
+                        <?php endif ?>
 
+                        <?= $page->date() ?>
+                        <?php if( $page->facebook()->isNotEmpty() || $page->date()->isNotEmpty() ): ?>
                         <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">
                                 <dt>Speichern!</dt>
                                 <dd>
                                     <?php if( $page->facebook()->isNotEmpty()): ?><a href="<?= $page->facebook() ?>">Facebook</a> &middot; <?php endif ?>
-                                        <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-                                        <div title="Zu Kalender hinzufügen" class="addeventatc">
-                                            Kalender
-                                            <span class="start"><?= date('Y-m-d H:i', strtotime($page->date().$page->open2())) ?></span>
-                                            <span class="end"><?= date('Y-m-d H:i', strtotime( $page->date().$page->open2().'+ 3 hours' )) ?></span>
-                                            <span class="timezone">Europe/Bern</span>
-                                            <span class="title"><?= $page->title() ?></span>
-                                            <span class="description"><?= $page->title() ?><br /><?= $page->subtitle() ?><br /><br /><?= $page->text(); ?></span>
-                                            <span class="location">Mühle Hunziken<br />3113 Rubigen</span>
-                                        </div>
+                                    <?php if( $page->date()->isNotEmpty() ): ?>
+                                    <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+                                    <div title="Zu Kalender hinzufügen" class="addeventatc">
+                                        Kalender
+                                        <span class="start"><?= date('Y-m-d H:i', strtotime($page->date().$page->open2())) ?></span>
+                                        <span class="end"><?= date('Y-m-d H:i', strtotime( $page->date().$page->open2().'+ 3 hours' )) ?></span>
+                                        <span class="timezone">Europe/Bern</span>
+                                        <span class="title"><?= $page->title() ?></span>
+                                        <span class="description"><?= $page->title() ?><br /><?= $page->subtitle() ?><br /><br /><?= $page->text(); ?></span>
+                                        <span class="location">Mühle Hunziken<br />3113 Rubigen</span>
+                                    </div>
+                                    <?php endif ?>
                                         
                                     
                                 </dd>
                             </div>
-                            <!-- @konradm todo -->
                         </div>
+                        <?php endif ?>
                     </dl>
 
                     <dl class="w-full sm:w-1/2">

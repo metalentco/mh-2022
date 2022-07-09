@@ -14,7 +14,6 @@
                             
                             <div class="aspect-square xl:aspect-video w-full"></div>
                             
-                            
                             <svg version="1.1" id="logo-text" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 viewBox="0 0 963 798" style="enable-background:new 0 0 963 798;" xml:space="preserve" class="absolute top-0 max-w-2xl mx-auto xl:hidden">
                             <path class="ll ll13" d="M814.9,687.5c-8,4.1-6.6,13-6.3,20.3c-0.1,4.6,3.4,6.7,7.6,7.4c6.1,1.8,62,0.7,69.5,1v0.6c20-1.3,49.1,0,68.9-1.2
@@ -295,14 +294,21 @@
                         <?php
                             $events = $site->page('programm')->children()->listed()->sortBy(function($page) {
                                 return $page->date()->toDate();
-                            })
+                            });
+                            $eventsFuture = $site->page('programm')->children()->listed()->filter(function ($child) {
+                                return $child->date()->toDate() > time();
+                            });
+
+                            $events = $eventsFuture->sortBy(function($page) {
+                                return $page->date()->toDate();
+                            });
                         ?>
                         <?php foreach($events as $event): ?>
                             <?php
                                 $space = "";
                                 if($event->indexOf() > 0){
                                     if($event->date()->toDate('n') != $events->nth($event->indexOf()-1)->date()->toDate('n')){
-                                        $space = "mt-48 first-of-type:before:hidden before:w-80 before:h-80 before:absolute before:bg-chover before:opacity-20 before:left-[-6rem] before:top-[-5rem] before:animate-spinB before:animate-spinB-".$event->date()->toDate('n');
+                                        $space = "mt-48 first-of-type:before:hidden before:w-40 before:h-40 md:before:w-80 md:before:h-80 before:absolute before:bg-chover before:opacity-20 before:left-[-3.5rem] md:before:left-[-6rem] before:top-[-3rem] md:before:top-[-5rem] before:animate-spinB before:animate-spinB-".$event->date()->toDate('n');
                                     }
                                 }
                                 $stripe_mask = "";
@@ -325,14 +331,14 @@
                                     </div>
                                     <?php if( $event->status_event()->isNotEmpty() ): ?>
                                         <div class="absolute right-0 xl:-right-10 bottom-5">
-                                            <div class="skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-top-1 before:rounded-full before:z-10">
-                                                <div class="pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none"><?= $event->status_event() ?></div>
+                                            <div class="flag-container">
+                                                <div class="flag"><?= $event->status_event() ?></div>
                                             </div>
                                         </div>
                                     <?php elseif( $event->availability()->isFalse() ): ?>
                                         <div class="absolute right-0 xl:-right-10 bottom-5">
-                                            <div class="skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-top-1 before:rounded-full before:z-10">
-                                                <div class="pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none">Ausverkauft</div>
+                                            <div class="flag-container">
+                                                <div class="flag">Ausverkauft</div>
                                             </div>
                                         </div>
                                     <?php endif ?>

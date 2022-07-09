@@ -22,7 +22,7 @@
             <div class="ml-auto md:max-w-xl">
                 <ul class="flex justify-between mb-8">
                     <li>
-                        <a href="#" class="customLink font-heading uppercase tracking-wider inline-block py-3">Programm</a>
+                        <a href="/" class="customLink font-heading uppercase tracking-wider inline-block py-3">Programm</a>
                     </li>
 
 

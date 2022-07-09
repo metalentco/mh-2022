@@ -173,9 +173,36 @@
     .kblocks .accordion + *:not(.accordion){
         @apply clear-both;
     }
+
+    .kblocks .text-block-mini + *:not(.text-block-mini){
+        @apply clear-both;
+    }
 }
 
 
+.form-inputs label:not([for="booking"]){
+    @apply block mt-6 font-bold ml-2 transition;
+}
+.form-inputs input:not([type="checkbox"]),
+.form-inputs textarea{
+    @apply pt-[0.8rem] pb-[0.65rem] mt-1 appearance-none min-w-0 w-full bg-white rounded-xl px-4 text-chover placeholder-gray-400 border-none focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover transition;
+}
+
+.form-inputs .active{
+    @apply block;
+}
+
+.form-inputs input:disabled{
+    @apply opacity-30;
+}
+
+.form-inputs #bookingForm label{
+    @apply opacity-30;
+}
+
+.form-inputs #bookingForm.active label{
+    @apply opacity-100;
+}
 
 
 
@@ -296,6 +323,13 @@
         transform: translateY(0em);
     }
 }
+
+.flag-container{
+    @apply skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-top-1 before:rounded-full before:z-10;
+}
+.flag{
+    @apply pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none;
+  }
 
 
 
