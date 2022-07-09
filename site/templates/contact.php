@@ -112,10 +112,10 @@
         </div>
         <?php snippet('menu') ?>
         <script>
-            var toggle = document.querySelector('#bookingForm')
+            var bookingForm = document.querySelector('#bookingForm')
             var inputs = document.querySelectorAll("#bookingForm input")
             document.querySelector('#booking').onclick = function(){
-                toggle.classList.toggle('active');
+                bookingForm.classList.toggle('active');
                 for (var i = 0; i < inputs.length; i++) {
                     inputs[i].disabled = !inputs[i].disabled;
                 }
