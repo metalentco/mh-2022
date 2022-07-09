@@ -57,13 +57,12 @@
 
 @layer base{
 
-    html{
-        //@apply scroll-smooth;
-    }
+    /* html{
+        @apply scroll-smooth;
+    } */
 
     body{
         font-size: 18px;
-        
     }
 
     @media(min-width:1800px){
@@ -78,7 +77,11 @@
 
 
     h1, h2, button{
-        @apply font-heading mt-4 uppercase;
+        @apply font-heading uppercase;
+    }
+
+    h1, h2{
+        @apply mt-4;
     }
 
     h2{
@@ -102,6 +105,7 @@
         background-position: 0 100%;
         background-repeat: repeat-x;
         background-size: 2px 2px;
+        padding-bottom: 1px;
     }
 
     a:not(.customLink):hover {
@@ -110,6 +114,17 @@
         background-size: auto 4px;
         background-repeat: repeat-x;
         text-decoration: none;
+    }
+
+    .ktext ul li,
+    .kblocks ul li{
+        text-indent: -23px;
+        padding-left: 23px;
+    }
+
+    .ktext ul li:before,
+    .kblocks ul li:before{
+        content:"— ";
     }
 
 
@@ -147,7 +162,7 @@
         @apply mt-20;
     }
     .kblocks figure img{
-        @apply rounded-[3rem] lg:rounded-[5rem];
+        @apply rounded-[2rem] lg:rounded-[4rem] mx-auto;
     }
     .kblocks figure figcaption{
         @apply mt-4 text-center;
@@ -189,6 +204,99 @@
     mask: url('../img/stripe-mask.svg');
     -webkit-mask: url('../img/stripe-mask.svg');
 }
+
+
+.waveTextAnimated span {
+    display: inline-block;
+    -webkit-animation: wave-text 0.5s ease-in-out infinite;
+            animation: wave-text 0.5s ease-in-out infinite;
+}
+
+.waveTextAnimated span:nth-of-type(1) {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+}
+  .waveTextAnimated span:nth-of-type(2) {
+    -webkit-animation-delay: 0.05s;
+            animation-delay: 0.05s;
+}
+  .waveTextAnimated span:nth-of-type(3) {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+}
+  .waveTextAnimated span:nth-of-type(4) {
+    -webkit-animation-delay: 0.15s;
+            animation-delay: 0.15s;
+}
+  .waveTextAnimated span:nth-of-type(5) {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+}
+.waveTextAnimated span:nth-of-type(6) {
+    -webkit-animation-delay: 0.25s;
+            animation-delay: 0.25s;
+}
+.waveTextAnimated span:nth-of-type(7) {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+}
+.waveTextAnimated span:nth-of-type(8) {
+    -webkit-animation-delay: 0.35s;
+            animation-delay: 0.35s;
+}
+.waveTextAnimated span:nth-of-type(9) {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+}
+.waveTextAnimated span:nth-of-type(10) {
+    -webkit-animation-delay: 0.45s;
+            animation-delay: 0.45s;
+}
+.waveTextAnimated span:nth-of-type(11) {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+}
+.waveTextAnimated span:nth-of-type(12) {
+    -webkit-animation-delay: 0.55s;
+            animation-delay: 0.55s;
+}
+.waveTextAnimated span:nth-of-type(13) {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+}
+.waveTextAnimated span:nth-of-type(14) {
+    -webkit-animation-delay: 0.65s;
+            animation-delay: 0.65s;
+}
+.waveTextAnimated span:nth-of-type(15) {
+    -webkit-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+}
+
+@-webkit-keyframes wave-text {
+    00% {
+      transform: translateY(0em);
+    }
+    60% {
+      transform: translateY(-0.6em);
+    }
+    100% {
+      transform: translateY(0em);
+    }
+}
+   
+@keyframes wave-text {
+    00% {
+        transform: translateY(0em);
+    }
+    60% {
+        transform: translateY(-0.6em);
+    }
+    100% {
+        transform: translateY(0em);
+    }
+}
+
 
 
 
