@@ -592,9 +592,9 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
-/* html{
-        @apply scroll-smooth;
-    } */
+html {
+  scroll-behavior: smooth;
+}
 
 body{
   font-size: 18px;
