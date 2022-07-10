@@ -1,0 +1,1 @@
+<div class="mt-20 grid sm:grid-cols-2 3xl:grid-cols-3 gap-8">

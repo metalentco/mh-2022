@@ -31,7 +31,10 @@ columns:
               - list
               - image
               - video
-              - image_text
-              - accordion
               - list_details
-              - text_block_mini
+              - group_start
+              - accordion
+              - group_end
+              - gallery_caption
+              - image_download
+              - imageText

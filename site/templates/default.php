@@ -3,10 +3,9 @@
     <head>
         <?php snippet('head') ?>
     </head>
-    <body class="bg-cbackground">
+    <body class="bg-cbackground text-cbase">
         <?php snippet('header') ?>
             <main class="">
-                <!-- <div class="max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6"> -->
                 <div class="flex">
                     <div class="min-w-[4.5rem] md:min-w-[10rem]"></div>
                     <div class="grow">
@@ -20,13 +19,17 @@
                     <div class="min-w-[4.5rem] md:min-w-[10rem]"></div>
                 </div>
 
+                <?php if ( $page->cover()->isNotEmpty() ): ?>
                 <div class="mt-20 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6 max-w-[100vh]">
-                    <img src="https://placehold.co/1920x1080" alt="" class="w-full rounded-[3rem] lg:rounded-[5rem] mx-auto">
+                    <div class="shadow-image hover:shadow-none transition rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-chover">
+                        <img src="<?= $page->cover()->toFile()->resize(400)->url() ?>" srcset="<?= $page->cover()->toFile()->srcset([1000, 1500, 2500]) ?>" alt="<?= $page->title() ?>" class="w-full mx-auto grayscale aspect-video object-cover">
+                    </div>
                 </div>
+                <?php endif ?>
 
                 <div class="-mt-10 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
 
-                    <div class="text-cbase kblocks mt-24 lg:mt-32">
+                    <div class="kblocks mt-24 lg:mt-32">
                         <?= $page->main_content()->toBlocks(); ?>
                     </div>
 

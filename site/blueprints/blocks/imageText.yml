@@ -1,4 +1,4 @@
-name: Bild mit Text
+name: Bild mit Text (Fakten)
 wysiwyg: true
 preview: title
 icon: text
@@ -6,10 +6,17 @@ fields:
   title:
     label: Titel
     type: text
+  image:
+    label: Bild
+    type: files
+    multiple: false
+    width: 1/2
+    layout: cards
   text:
     label: Text
     type: writer
     inline: true
+    width: 1/2
   link:
     label: Link
     type: url

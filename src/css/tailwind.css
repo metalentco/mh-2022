@@ -57,9 +57,9 @@
 
 @layer base{
 
-    html{
+    /* html{
         @apply scroll-smooth;
-    }
+    } */
 
     body{
         font-size: 18px;
@@ -143,7 +143,7 @@
     .kblocks h4, h5{
         @apply mt-20;
     }
-    .kblocks p{
+    .kblocks > p{
         @apply mt-10;
     }
     .kblocks h4 + p, .kblocks h5 + p{
@@ -155,28 +155,22 @@
     .kblocks .medium{
         @apply text-2xl leading-snug lg:columns-2;
     }
-    .kblocks p:not(.large, .medium){
+    .kblocks > p:not(.large, .medium){
         @apply md:columns-2 3xl:columns-3;
     }
-    .kblocks figure{
-        @apply mt-20;
-    }
-    .kblocks figure img{
-        @apply rounded-[2rem] lg:rounded-[4rem] mx-auto;
-    }
-    .kblocks figure figcaption{
-        @apply mt-4 text-center;
+    .kblocks figure:not(.mt-0) img{
+        @apply rounded-[2rem] lg:rounded-[4rem] mx-auto mt-20;
     }
     .kblocks .image_text h4{
         @apply mt-4 sm:mt-0;
     }
-    .kblocks .accordion + *:not(.accordion){
+    /* .kblocks .accordion + *:not(.accordion){
         @apply clear-both;
     }
 
     .kblocks .text-block-mini + *:not(.text-block-mini){
         @apply clear-both;
-    }
+    } */
 }
 
 

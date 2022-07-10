@@ -154,7 +154,6 @@
                         </div>
                         <?php endif ?>
 
-                        <?= $page->date() ?>
                         <?php if( $page->facebook()->isNotEmpty() || $page->date()->isNotEmpty() ): ?>
                         <div class="wavy-bottom">
                             <div class="flex justify-between pt-2 pb-1.5">

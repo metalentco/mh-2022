@@ -22,6 +22,10 @@ columns:
               title:
                 label: Bezeichnung
                 type: text
+          cover:
+            label: Cover-Bild
+            type: files
+            multiple: false
           main_content:
             label: Inhalt
             type: blocks
@@ -31,9 +35,13 @@ columns:
               - list
               - image
               - video
-              - image_text
-              - accordion
               - list_details
+              - group_start
+              - accordion
+              - group_end
+              - gallery_caption
+              - image_download
+              - imageText
   sidebar:
     width: 1/3
     sections:

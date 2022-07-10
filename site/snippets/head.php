@@ -81,6 +81,10 @@
     .wavy-bottom:after{
         background-color: <?= page("home")->chover() ?>
     }
+    .shadow-chover{
+        box-shadow: '1rem 1rem 0 0 <?= page("home")->chover() ?>'
+    }
+
 
 
 

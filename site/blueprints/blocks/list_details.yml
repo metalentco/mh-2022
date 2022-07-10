@@ -1,6 +1,6 @@
 name: Liste
 wysiwyg: true
-preview: title
+preview: fields
 icon: bars
 fields:
   details:

@@ -1,6 +1,5 @@
 name: Akkordeon
 wysiwyg: true
-preview: title
 icon: text
 fields:
   title:
@@ -13,10 +12,18 @@ fields:
     type: toggle
     default: true
     text: 
-      - "geschlossen"
+      - "zugeklappt"
       - "aufgeklappt"
 
   text:
     label: Text
-    type: writer
-    inline: true
+    type: textarea
+    buttons:
+      - bold
+      - italic
+      - link
+      - email
+      - file
+      - ul
+      - ol
+      

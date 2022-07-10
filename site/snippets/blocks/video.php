@@ -17,7 +17,7 @@ use Kirby\Cms\Html;
 ?>
 
 
-<figure class="w-full aspect-video overflow-hidden rounded-[2rem] lg:rounded-[4rem] relative videoBlock">
+<figure class="mt-20 w-full aspect-video overflow-hidden rounded-[2rem] lg:rounded-[4rem] relative videoBlock">
     <button class="w-full absolute group" id="<?= "button-".$block->id() ?>">
         <div class="aspect-video bg-cover bg-center blur-md scale-110" style="background-image:url(<?= $imageLink ?>)"></div>
         <svg width="93" height="105" viewBox="0 0 93 105" xmlns="http://www.w3.org/2000/svg" class="group-hover:hidden fill-cbase absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

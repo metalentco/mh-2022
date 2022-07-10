@@ -1,6 +1,8 @@
 <div class="image_text mt-16 flex flex-wrap sm:flex-nowrap sm:space-x-4 max-w-3xl mx-auto">
     <div>
-        <img src="https://placehold.co/800x600" alt="">
+        <?php if( $block->image()->isNotEmpty() ): ?>
+        <img src="<?= $block->image()->toFile()->resize(1000)->url() ?>" srcset="<?= $page->cover()->toFile()->srcset([1000, 1500]) ?>" alt="Mühle Hunziken">
+        <?php endif ?>
     </div>
     <div>
         <h4><?= $block->title() ?></h4>

@@ -21,7 +21,9 @@
                 </div>
                 <div class="mt-20 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6 max-w-[100vh]">
                     <div class="aspect-square sm:aspect-video">
-                        <iframe class="w-full h-full rounded-[2rem] lg:rounded-[4rem] mx-auto" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10906.425001692498!2d7.5418107!3d46.8907943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x801cb7ebfc33ae67!2sM%C3%BChle%20Hunziken!5e0!3m2!1sen!2sch!4v1657395077487!5m2!1sen!2sch" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="w-full h-full shadow-image hover:shadow-none transition rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-chover">
+                            <iframe class="bg-white w-full h-full rounded-[2rem] lg:rounded-[4rem] mx-auto" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10906.425001692498!2d7.5418107!3d46.8907943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x801cb7ebfc33ae67!2sM%C3%BChle%20Hunziken!5e0!3m2!1sen!2sch!4v1657395077487!5m2!1sen!2sch" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
 
@@ -29,7 +31,7 @@
 
 
                 <div class="-mt-10 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
-                    <div class="text-cbase kblocks mt-24 lg:mt-32">
+                    <div class="text-cbase kblocks mt-12 lg:mt-16">
                         <?= $page->main_content()->toBlocks(); ?>
                     </div>
                 </div>

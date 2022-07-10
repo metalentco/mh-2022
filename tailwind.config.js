@@ -17,6 +17,9 @@ module.exports = {
             },
             animation: {
                 'spinB': 'spinB 3s linear infinite'
+            },
+            boxShadow: {
+                'image': '1rem 1rem 0 0 #48714D',
             }
         }
     },
