@@ -292,22 +292,24 @@
                     <!-- LINEUP -->
                     <ul class="mt-40 first-of-type:mt-0 relative">
                         <?php
-                            $events = $site->page('programm')->children()->listed()->sortBy(function($page) {
-                                return $page->date()->toDate();
-                            });
-                            $eventsFuture = $site->page('programm')->children()->listed()->filter(function ($child) {
+                            // $events = $site->page('programm')->children()->listed()->sortBy(function($page) {
+                            //     return $page->date()->toDate();
+                            // });
+                            $events = $site->page('programm')->children()->listed()->filter(function ($child) {
                                 return $child->date()->toDate() > time();
                             });
 
-                            $events = $eventsFuture->sortBy(function($page) {
-                                return $page->date()->toDate();
-                            });
+                            // $events = $eventsFuture->sortBy(function($page) {
+                            //     return $page->date()->toDate();
+                            // });
+                            $index = 0;
                         ?>
+                        
                         <?php foreach($events as $event): ?>
                             <?php
                                 $space = "";
                                 if($event->indexOf() > 0){
-                                    if($event->date()->toDate('n') != $events->nth($event->indexOf()-1)->date()->toDate('n')){
+                                    if($index > 0 && $event->date()->toDate('n') != $events->nth($index-1)->date()->toDate('n')){
                                         $space = "mt-48 first-of-type:before:hidden before:w-40 before:h-40 md:before:w-80 md:before:h-80 before:absolute before:bg-chover before:opacity-20 before:left-[-3.5rem] md:before:left-[-6rem] before:top-[-3rem] md:before:top-[-5rem] before:animate-spinB before:animate-spinB-".$event->date()->toDate('n');
                                     }
                                 }
@@ -344,6 +346,7 @@
                                     <?php endif ?>
                                 </a>
                             </li>
+                            <?php $index++; ?>
                         <?php endforeach ?>
                     </ul>
 
