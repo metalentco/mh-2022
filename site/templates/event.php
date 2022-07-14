@@ -2,6 +2,8 @@
 <html lang="de">
     <head>
         <?php snippet('head') ?>
+
+        <?php if( $page->cover()->isNotEmpty() ): ?>
         <style>
             .coverImage{
                 background-image: url( <?= $page->cover()->toFile()->resize(1000)->url() ?>);
@@ -17,6 +19,8 @@
                 }
             }
         </style>
+        <?php endif ?>
+
     </head>
     <body class="bg-cbackground text-cbase">
         <?php snippet('header') ?>
