@@ -164,13 +164,6 @@
     .kblocks .image_text h4{
         @apply mt-4 sm:mt-0;
     }
-    /* .kblocks .accordion + *:not(.accordion){
-        @apply clear-both;
-    }
-
-    .kblocks .text-block-mini + *:not(.text-block-mini){
-        @apply clear-both;
-    } */
 }
 
 

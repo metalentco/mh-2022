@@ -284,7 +284,7 @@
                     </div>
                         
 
-
+<?= $page->children()->filterBy('date', 'date >', 'time') ?>
 
 
 
@@ -295,7 +295,7 @@
                             // $events = $site->page('programm')->children()->listed()->sortBy(function($page) {
                             //     return $page->date()->toDate();
                             // });
-                            $events = $site->page('programm')->children()->listed()->filter(function ($child) {
+                            $events = page('programm')->children()->listed()->filter(function ($child) {
                                 return $child->date()->toDate() > time();
                             });
 
@@ -314,7 +314,7 @@
                                     }
                                 }
                                 $stripe_mask = "";
-                                if( $event->status_event()->isNotEmpty() || $event->availability()->isFalse() ){
+                                if( $event->status_event()->isNotEmpty() || ($event->availability() != "erhältlich") ){
                                     $stripe_mask = "stripe-mask";
                                 }
                             ?>
@@ -337,7 +337,7 @@
                                                 <div class="flag"><?= $event->status_event() ?></div>
                                             </div>
                                         </div>
-                                    <?php elseif( $event->availability()->isFalse() ): ?>
+                                    <?php elseif( $event->availability() != "erhältlich" ): ?>
                                         <div class="absolute right-0 xl:-right-10 bottom-5">
                                             <div class="flag-container">
                                                 <div class="flag">Ausverkauft</div>

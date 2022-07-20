@@ -1,9 +1,9 @@
 title: Programm
-icon: 🗓
+icon: calendar
 
 columns:
   left:
-    width: 1/2
+    width: 1/3
     sections:
       drafts:
         extends: sections/events
@@ -16,9 +16,34 @@ columns:
         status: unlisted
 
   right:
-    width: 1/2
+    width: 2/3
     sections:
-      listed:
-        extends: sections/events
-        label: Publiziert
-        status: listed
+      listed_current:
+        headline: Anlässe (publiziert und Upcoming)
+        type: pagesdisplay
+        layout: table
+        columns:
+          date:
+            label: Datum
+            value: "{{ page.date.toDate('d.m.Y') }}"
+            width: 1/6
+          availability:
+            label: Tickets
+            value: "{{ page.availability.text }}"
+          status_event: 
+            label: Status
+        query: page.children.filterBy('date', 'date >', 'today')
+        search: true
+      listed_past:
+        headline: Vergangene Anlässe
+        type: pagesdisplay
+        layout: table
+        columns:
+          date:
+            label: Datum
+            value: "{{ page.date.toDate('d.m.Y') }}"
+            width: 1/6
+          gallery_toggle:
+            label: Galerie
+        query: page.children.filterBy('date', 'date <', 'today')
+        search: true

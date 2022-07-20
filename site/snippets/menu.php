@@ -55,7 +55,7 @@
                         <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-14 py-4 md:py-0 md:w-20 md:mt-4">
                             <path class="fill-cbase" d="M58.5892 67.3036C59.611 68.3345 60.0904 67.9407 60.6687 67.5535C61.247 67.1662 66.2202 61.5773 66.5275 60.6178C66.8349 59.6582 65.6714 58.5618 65.6714 58.5618C65.6714 58.5618 11.9136 2.71823 10.6713 1.92188C9.42888 1.12552 8.28851 1.97803 8.28851 1.97803C8.28851 1.97803 3.26062 6.94468 2.67031 8.05069C2.08 9.15669 2.07464 9.9756 2.65761 10.8765C3.24057 11.7773 58.5892 67.3036 58.5892 67.3036Z" fill="white"/>
                             <path class="fill-cbase" d="M2.95631 60.8871C2.95631 60.8871 2.18925 59.813 3.26186 58.7309L58.3492 3.15551C58.3492 3.15551 60.3767 1.82336 61.4374 2.89341L67.6703 9.18151C67.6703 9.18151 68.0864 9.91415 67.2465 11.2185C66.4066 12.5229 12.748 65.1445 11.9663 65.8361C11.1845 66.5278 10.4295 67.2279 9.36525 66.1542C6.33726 63.0994 4.80409 63.2146 2.95138 60.8822" fill="white"/>
-                        </svg>                                
+                        </svg>                   
                     </a>
                 </div>
                 <div class="hidden absolute p-16 bg-indigo-500 text-black rounded-full w-10 h-10 z-40">
@@ -78,6 +78,9 @@
             <li class="relative">
                 <a href="<?= $site->url() ?>" class="customLink font-heading uppercase inline-block my-2 sm:my-6"><?= page('programm')->title(); ?></a>
             </li>
+            <li class="relative">
+                <a href="<?= page('galerie')->url() ?>" class="customLink font-heading uppercase inline-block my-2 sm:my-6"><?= page('galerie')->title(); ?></a>
+            </li>
 
 
 
@@ -86,7 +89,7 @@
                 if($items->isNotEmpty()):
             ?>
                 <?php foreach($items as $item): ?>
-                    <?php if($item != "programm"): ?>
+                    <?php if($item != "programm" and $item != "galerie"): ?>
                         <li class="relative">
                             <?php if($item->hasChildren() && $item->isNotEmpty()): ?>
                                 <span class="pointer-events-none customLink font-heading uppercase inline-block opacity-20 my-2 sm:my-6"><?= $item->title(); ?></span>

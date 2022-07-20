@@ -1,0 +1,33 @@
+title: Galerie
+icon: images
+
+columns:
+  left:
+    width: 1/3
+    sections:
+      drafts:
+        extends: sections/gallery_events
+        label: Entwürfe
+        status: draft
+
+      unlisted:
+        extends: sections/gallery_events
+        label: Im Review
+        status: unlisted
+
+  right:
+    width: 2/3
+    sections:
+      listed_current:
+        headline: Anlässe
+        type: pagesdisplay
+        layout: table
+        columns:
+          # date:
+          #   label: Datum
+          #   #value: "{{ page().date.toDate('d.m.Y') }}"
+          #   width: 1/6
+          gallery_photographer:
+            label: Fotograf:in/n:en
+            value: "{{ page.gallery_photographer.text }}"
+        search: true

@@ -1,0 +1,45 @@
+title: Event (Galerie)
+icon: images
+columns:
+  main:
+    fields:
+      past_event:
+        label: Vergangener Event
+        type: multiselect
+        max: 1
+        width: 1/3
+        options: query
+        query:
+          fetch: kirby.collection("program").filterBy('date', 'date <', 'today')
+          text: "{{ page.date.toDate('d.m.Y') }} - {{ page.title }}"
+      date:
+        label: Datum
+        type: date
+        display: DD.MM.YYYY
+        width: 1/3
+        help: Nur, wenn kein vergangener Event ausgewählt
+      gallery_photographer:
+        type: text
+        label: Fotograf:in/n:en
+        width: 1/3
+      gallery:
+        label: Galerie
+        type: files
+        layout: cards
+        help: Erstes Bild agiert als Cover-Foto
+
+
+addFields:
+  __dialog:
+    redirect: true
+  past_event:
+    label: Galerie aus vergangenem Event
+    type: multiselect
+    max: 1
+    options: query
+    query:
+      fetch: kirby.collection("program").filterBy('date', 'date <', 'today')
+      text: "{{ page.date.toDate('d.m.Y') }} - {{ page.title }}"
+  title:
+    label: …oder separater Titel
+    type: text

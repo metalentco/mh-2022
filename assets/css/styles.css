@@ -805,14 +805,6 @@ a:not(.customLink):hover {
   }
 }
 
-/* .kblocks .accordion + *:not(.accordion){
-        @apply clear-both;
-    }
-
-    .kblocks .text-block-mini + *:not(.text-block-mini){
-        @apply clear-both;
-    } */
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1153,12 +1145,20 @@ a:not(.customLink):hover {
   margin-top: 0.5rem;
 }
 
-.mt-\[8\%\] {
-  margin-top: 8%;
+.ml-16 {
+  margin-left: 4rem;
 }
 
 .mt-40 {
   margin-top: 10rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-\[8\%\] {
+  margin-top: 8%;
 }
 
 .mt-48 {
@@ -1195,6 +1195,10 @@ a:not(.customLink):hover {
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -1395,6 +1399,10 @@ a:not(.customLink):hover {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-8 {
@@ -1696,6 +1704,19 @@ a:not(.customLink):hover {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-\[2\.4rem\] {
+  font-size: 2.4rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-\[1\.6rem\] {
+  font-size: 1.6rem;
 }
 
 .font-bold {
@@ -2789,16 +2810,20 @@ nav li a:hover,
     flex-shrink: 0;
   }
 
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .sm\:gap-8 {
+    gap: 2rem;
   }
 
   .sm\:space-x-12 > :not([hidden]) ~ :not([hidden]) {
@@ -2851,10 +2876,6 @@ nav li a:hover,
 @media (min-width: 768px) {
   .md\:top-\[-0\.35rem\] {
     top: -0.35rem;
-  }
-
-  .md\:float-left {
-    float: left;
   }
 
   .md\:mx-0 {
@@ -2910,10 +2931,6 @@ nav li a:hover,
     width: 3rem;
   }
 
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
   .md\:min-w-\[10rem\] {
     min-width: 10rem;
   }
@@ -2931,12 +2948,12 @@ nav li a:hover,
          columns: 2;
   }
 
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:flex-row-reverse {
