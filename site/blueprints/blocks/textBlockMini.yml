@@ -1,6 +1,5 @@
 name: Mini-Text-Block
 wysiwyg: true
-preview: title
 icon: text
 fields:
   title:

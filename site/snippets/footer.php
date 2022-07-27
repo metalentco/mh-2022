@@ -14,10 +14,10 @@
             </form>
         </div>
     </div>
-    <div class="mt-20 bg-clink bg-top mask-before bg-no-repeat bg-left-bottom pb-40 sm:pb-20 xl:pb-0 bg-contain sm:bg-[length:80%] lg:bg-[length:70%] xl:bg-[length:50%] 2xl:bg-[length:800px] before:bg-clink before:content-[''] before:-top-6 before:h-6 before:w-full before:block before:relative" <?php if(page('home')->footer_image()->isNotEmpty()) {echo "style=background-image:url('".page('home')->footer_image()->toFile()->url()."')";}?>>
+    <div class="mt-20 bg-clink text-2xl bg-top footer-wave bg-no-repeat bg-[length:200%] bg-left-bottom pb-40 sm:pb-20 xl:pb-0 bg-contain sm:bg-[length:80%] lg:bg-[length:70%] xl:bg-[length:50%] 2xl:bg-[length:800px] before:bg-clink before:content-[''] before:-top-6 before:h-6 before:w-full before:block before:relative" <?php if(page('home')->footer_image()->isNotEmpty()) {echo "style=background-image:url('".page('home')->footer_image()->toFile()->url()."')";}?>>
         <div class="max-w-7xl mx-auto px-3 md:px-6">
             <div class="ml-auto md:max-w-xl">
-                <ul class="flex justify-between mb-8">
+                <ul class="sm:flex justify-between mb-8 text-center sm:text-left">
                     <li>
                         <a href="<?= $site->url() ?>" class="customLink font-heading uppercase tracking-wider inline-block py-3">Programm</a>
                     </li>
@@ -35,7 +35,7 @@
                                 <li>
                                     <a href="<?= $item->url() ?>" class="customLink font-heading uppercase tracking-wider inline-block py-3"><?= $item->title(); ?></a>
                                     <?php if($item->hasChildren() && $item->isNotEmpty()): ?>
-                                        <ul>
+                                        <ul class="flex sm:block justify-around w-full -mt-2 sm:mt-0 text-lg">
                                             <?php foreach($item->children()->listed() as $subitem): ?>
                                                 <li>
                                                     <a href="<?= $subitem->url(); ?>" class="customLink py-1 inline-block"><?= $subitem->title(); ?></a>

@@ -22,11 +22,48 @@ columns:
         type: text
         label: Fotograf:in/n:en
         width: 1/3
-      gallery:
+        help: im Untertitel
+      gallery_0:
         label: Galerie
         type: files
         layout: cards
         help: Erstes Bild agiert als Cover-Foto
+      gallery_0_photographer:
+        label: Fotograf:in
+        type: text
+        width: 1/2
+        when:
+          gallery_1_toggle: true
+      gallery_1_toggle:
+        type: toggle
+        label: Zweite Galerie
+      gallery_1:
+        label: Galerie
+        type: files
+        layout: cards
+        when:
+          gallery_1_toggle: true
+      gallery_1_photographer:
+        label: Fotograf:in
+        type: text
+        width: 1/2
+        when:
+          gallery_1_toggle: true
+      gallery_2_toggle:
+        type: toggle
+        label: Dritte Galerie
+      gallery_2:
+        label: Galerie
+        type: files
+        layout: cards
+        when:
+          gallery_2_toggle: true
+      gallery_2_photographer:
+        label: Fotograf:in
+        type: text
+        width: 1/2
+        when:
+          gallery_2_toggle: true
 
 
 addFields:

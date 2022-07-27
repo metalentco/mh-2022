@@ -58,7 +58,7 @@
 @layer base{
 
     html{
-        @apply scroll-smooth;
+        /* @apply scroll-smooth; */
     }
 
     body{
@@ -85,11 +85,11 @@
     }
 
     h2{
-        @apply font-heading uppercase text-5xl lg:text-7xl text-center;
+        @apply font-heading uppercase text-5xl lg:text-7xl text-center mb-8;
     }
 
     h3{
-        @apply font-heading uppercase font-bold text-3xl lg:text-5xl text-center mt-4;
+        @apply font-heading uppercase font-bold text-3xl lg:text-5xl text-center mt-4 mb-8;
     }
 
     h4{
@@ -128,9 +128,7 @@
     }
 
 
-    .kblocks h4, h5{
-        @apply mt-24 lg:mt-32;
-    }
+    
     .kblocks h2{
         @apply pt-24 lg:pt-32;
     }
@@ -140,8 +138,8 @@
     .kblocks h2 + h3{
         @apply pt-6 lg:pt-8;
     }
-    .kblocks h4, h5{
-        @apply mt-20;
+    .kblocks > h4, h5{
+        @apply mt-24 lg:mt-32;
     }
     .kblocks > p{
         @apply mt-10;
@@ -202,17 +200,37 @@
     -webkit-mask: url('../img/wave.svg');
 }
 
-.mask-before:before{
+.footer-wave:before{
     mask: url('../img/footer-mask.svg');
     -webkit-mask: url('../img/footer-mask.svg');
+    animation: wave-move 2s linear infinite;
+}
+
+@keyframes wave-move {
+    from{
+        mask-position: 0;
+    }
+    to{
+        mask-position: 53px;
+    }
 }
 
 .flag-mask{
     mask: url('../img/flag-mask.svg');
-    -webkit-mask: url('../img/flag-mask.svg');
     mask-size: contain;
-    -webkit-mask-size: contain;
+    animation: flag-move 2s linear infinite;
 }
+
+@keyframes flag-move {
+    from{
+        mask-position: 0;
+    }
+    to{
+        mask-position: 19px;
+    }
+}
+
+
 
 .stripe-mask{
     mask: url('../img/stripe-mask.svg');
@@ -222,81 +240,53 @@
 
 .waveTextAnimated span {
     display: inline-block;
-    -webkit-animation: wave-text 0.5s ease-in-out infinite;
-            animation: wave-text 0.5s ease-in-out infinite;
+    animation: wave-text 0.5s ease-in-out infinite;
 }
 
 .waveTextAnimated span:nth-of-type(1) {
-    -webkit-animation-delay: 0s;
-            animation-delay: 0s;
+    animation-delay: 0s;
 }
   .waveTextAnimated span:nth-of-type(2) {
-    -webkit-animation-delay: 0.05s;
-            animation-delay: 0.05s;
+    animation-delay: 0.05s;
 }
   .waveTextAnimated span:nth-of-type(3) {
-    -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
   .waveTextAnimated span:nth-of-type(4) {
-    -webkit-animation-delay: 0.15s;
-            animation-delay: 0.15s;
+    animation-delay: 0.15s;
 }
   .waveTextAnimated span:nth-of-type(5) {
-    -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 .waveTextAnimated span:nth-of-type(6) {
-    -webkit-animation-delay: 0.25s;
-            animation-delay: 0.25s;
+    animation-delay: 0.25s;
 }
 .waveTextAnimated span:nth-of-type(7) {
-    -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 .waveTextAnimated span:nth-of-type(8) {
-    -webkit-animation-delay: 0.35s;
-            animation-delay: 0.35s;
+    animation-delay: 0.35s;
 }
 .waveTextAnimated span:nth-of-type(9) {
-    -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 .waveTextAnimated span:nth-of-type(10) {
-    -webkit-animation-delay: 0.45s;
-            animation-delay: 0.45s;
+    animation-delay: 0.45s;
 }
 .waveTextAnimated span:nth-of-type(11) {
-    -webkit-animation-delay: 0.5s;
-            animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 .waveTextAnimated span:nth-of-type(12) {
-    -webkit-animation-delay: 0.55s;
-            animation-delay: 0.55s;
+    animation-delay: 0.55s;
 }
 .waveTextAnimated span:nth-of-type(13) {
-    -webkit-animation-delay: 0.6s;
-            animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 .waveTextAnimated span:nth-of-type(14) {
-    -webkit-animation-delay: 0.65s;
-            animation-delay: 0.65s;
+    animation-delay: 0.65s;
 }
 .waveTextAnimated span:nth-of-type(15) {
-    -webkit-animation-delay: 0.7s;
-            animation-delay: 0.7s;
-}
-
-@-webkit-keyframes wave-text {
-    00% {
-      transform: translateY(0em);
-    }
-    60% {
-      transform: translateY(-0.6em);
-    }
-    100% {
-      transform: translateY(0em);
-    }
+    animation-delay: 0.7s;
 }
    
 @keyframes wave-text {
@@ -312,10 +302,10 @@
 }
 
 .flag-container{
-    @apply skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-top-1 before:rounded-full before:z-10;
+    @apply skew-x-12 before:w-1 before:bg-clink before:absolute before:h-12 sm:before:h-16 before:left-0 before:top-0 sm:before:-top-1 before:rounded-full before:z-10;
 }
 .flag{
-    @apply pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none;
+    @apply pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none text-sm sm:text-lg leading-none sm:leading-none;
   }
 
 
@@ -370,7 +360,7 @@
     -webkit-mask: url('../img/month-12.png');
 }
 .before\:animate-spinB::before{
-    animation-duration: 10s !important;
+    animation-duration: 20s !important;
     /* animation-direction: reverse !important; */
     mask-size: contain;
     mask-repeat: no-repeat;
@@ -393,50 +383,51 @@
 
 .ll{
     fill: #FFFFFF;
+    --delay: 0.1;
 }
 
 .ll{
-    animation: pulseletters 0.6s ease infinite;
+    animation: pulseletters 12s ease infinite;
 }
 
 .ll01{
-    animation-delay: 0.1s
+    animation-delay: calc(var(--delay) * 1s);
 }
 .ll02{
-    animation-delay: 0.2s
+    animation-delay: calc(var(--delay) * 2s);
 }
 .ll03{
-    animation-delay: 0.3s
+    animation-delay: calc(var(--delay) * 3s);
 }
 .ll04{
-    animation-delay: 0.4s
+    animation-delay: calc(var(--delay) * 4s);
 }
 .ll05{
-    animation-delay: 0.5s
+    animation-delay: calc(var(--delay) * 5s);
 }
 .ll06{
-    animation-delay: 0.6s
+    animation-delay: calc(var(--delay) * 6s);
 }
 .ll07{
-    animation-delay: 0.7s
+    animation-delay: calc(var(--delay) * 7s);
 }
 .ll08{
-    animation-delay: 0.8s
+    animation-delay: calc(var(--delay) * 8s);
 }
 .ll09{
-    animation-delay: 0.9s
+    animation-delay: calc(var(--delay) * 9s);
 }
 .ll10{
-    animation-delay: 1.0s
+    animation-delay: calc(var(--delay) * 10s);
 }
 .ll11{
-    animation-delay: 1.1s
+    animation-delay: calc(var(--delay) * 11s);
 }
 .ll12{
-    animation-delay: 1.2s
+    animation-delay: calc(var(--delay) * 12s);
 }
 .ll13{
-    animation-delay: 1.3s
+    animation-delay: calc(var(--delay) * 13s);
 }
 
 @keyframes pulseletters{

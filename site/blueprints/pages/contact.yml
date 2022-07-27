@@ -38,3 +38,4 @@ columns:
               - gallery_caption
               - image_download
               - imageText
+              - textBlockMini

@@ -55,6 +55,14 @@ tabs:
             type: textarea
             buttons: false
             help: Supporter oder andere Infos
+            width: 3/4
+          subtitle_toggle:
+            label: Untertitel im Programm
+            type: toggle
+            width: 1/4
+            text:
+              - "ausblenden"
+              - "einblenden"
           country:
             label: Land
             type: select
@@ -69,7 +77,6 @@ tabs:
             label: Stil
             type: tags
             width: 1/2
-            max: 1
             options:
               - Hardrock
               - Hip Hop
@@ -176,8 +183,9 @@ tabs:
                 type: select
                 default: muehle
                 options:
-                  - muehle: Mühle Hunziken
                   - openair: Bühne am Teich
+                  - muehle: Mühle Hunziken
+                  - garten: Mühligarten
               line10:
                 type: line
               author:

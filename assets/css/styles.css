@@ -592,8 +592,8 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  /* @apply scroll-smooth; */
 }
 
 body{
@@ -622,6 +622,7 @@ h1,  h2 {
 }
 
 h2 {
+  margin-bottom: 2rem;
   text-align: center;
   font-family: Embro, Impact, sans-serif;
   font-size: 3rem;
@@ -638,6 +639,7 @@ h2 {
 
 h3 {
   margin-top: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
   font-family: Embro, Impact, sans-serif;
   font-size: 1.875rem;
@@ -690,16 +692,6 @@ a:not(.customLink):hover {
   content:"— ";
 }
 
-.kblocks h4,  h5 {
-  margin-top: 6rem;
-}
-
-@media (min-width: 1024px) {
-  .kblocks h4,  h5 {
-    margin-top: 8rem;
-  }
-}
-
 .kblocks h2 {
   padding-top: 6rem;
 }
@@ -730,8 +722,14 @@ a:not(.customLink):hover {
   }
 }
 
-.kblocks h4,  h5 {
-  margin-top: 5rem;
+.kblocks > h4,  h5 {
+  margin-top: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .kblocks > h4,  h5 {
+    margin-top: 8rem;
+  }
 }
 
 .kblocks > p {
@@ -990,20 +988,12 @@ a:not(.customLink):hover {
   top: 0px;
 }
 
-.-bottom-10 {
-  bottom: -2.5rem;
-}
-
-.left-2 {
-  left: 0.5rem;
-}
-
 .top-\[-0\.2rem\] {
   top: -0.2rem;
 }
 
-.-top-10 {
-  top: -2.5rem;
+.left-1\/2 {
+  left: 50%;
 }
 
 .right-0 {
@@ -1022,8 +1012,8 @@ a:not(.customLink):hover {
   bottom: 1.25rem;
 }
 
-.left-1\/2 {
-  left: 50%;
+.bottom-2 {
+  bottom: 0.5rem;
 }
 
 .z-30 {
@@ -1083,6 +1073,10 @@ a:not(.customLink):hover {
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
 }
 
 .mr-8 {
@@ -1145,12 +1139,12 @@ a:not(.customLink):hover {
   margin-top: 0.5rem;
 }
 
-.ml-16 {
-  margin-left: 4rem;
+.mt-\[0\.5rem\] {
+  margin-top: 0.5rem;
 }
 
-.mt-40 {
-  margin-top: 10rem;
+.mt-28 {
+  margin-top: 7rem;
 }
 
 .mt-10 {
@@ -1161,6 +1155,10 @@ a:not(.customLink):hover {
   margin-top: 8%;
 }
 
+.mt-40 {
+  margin-top: 10rem;
+}
+
 .mt-48 {
   margin-top: 12rem;
 }
@@ -1169,8 +1167,8 @@ a:not(.customLink):hover {
   margin-top: 0.25rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .mb-1\.5 {
@@ -1187,6 +1185,10 @@ a:not(.customLink):hover {
 
 .mt-16 {
   margin-top: 4rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -1401,12 +1403,20 @@ a:not(.customLink):hover {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .gap-4 {
   gap: 1rem;
 }
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-x-8 {
@@ -1506,6 +1516,10 @@ a:not(.customLink):hover {
 
 .bg-\[url\(\'\'\)\] {
   background-image: url('');
+}
+
+.bg-\[length\:200\%\] {
+  background-size: 200%;
 }
 
 .bg-contain {
@@ -1635,8 +1649,8 @@ a:not(.customLink):hover {
   padding-top: 0px;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .pb-1\.5 {
@@ -1645,6 +1659,10 @@ a:not(.customLink):hover {
 
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-left {
@@ -1667,6 +1685,16 @@ a:not(.customLink):hover {
   font-family: AuthenticSansCondensed, Arial Narrow, sans-serif;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1677,19 +1705,9 @@ a:not(.customLink):hover {
   line-height: 1;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-\[70\%\] {
@@ -1706,13 +1724,8 @@ a:not(.customLink):hover {
   line-height: 1.25rem;
 }
 
-.text-\[2\.4rem\] {
-  font-size: 2.4rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-\[105\%\] {
+  font-size: 105%;
 }
 
 .text-\[1\.6rem\] {
@@ -2011,16 +2024,68 @@ a:not(.customLink):hover {
   -webkit-mask: url('../img/wave.svg');
 }
 
-.mask-before:before{
+.footer-wave:before{
   mask: url('../img/footer-mask.svg');
   -webkit-mask: url('../img/footer-mask.svg');
+  -webkit-animation: wave-move 2s linear infinite;
+          animation: wave-move 2s linear infinite;
+}
+
+@-webkit-keyframes wave-move {
+  from{
+    -webkit-mask-position: 0;
+            mask-position: 0;
+  }
+
+  to{
+    -webkit-mask-position: 53px;
+            mask-position: 53px;
+  }
+}
+
+@keyframes wave-move {
+  from{
+    -webkit-mask-position: 0;
+            mask-position: 0;
+  }
+
+  to{
+    -webkit-mask-position: 53px;
+            mask-position: 53px;
+  }
 }
 
 .flag-mask{
-  mask: url('../img/flag-mask.svg');
   -webkit-mask: url('../img/flag-mask.svg');
-  mask-size: contain;
+          mask: url('../img/flag-mask.svg');
   -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-animation: flag-move 2s linear infinite;
+          animation: flag-move 2s linear infinite;
+}
+
+@-webkit-keyframes flag-move {
+  from{
+    -webkit-mask-position: 0;
+            mask-position: 0;
+  }
+
+  to{
+    -webkit-mask-position: 19px;
+            mask-position: 19px;
+  }
+}
+
+@keyframes flag-move {
+  from{
+    -webkit-mask-position: 0;
+            mask-position: 0;
+  }
+
+  to{
+    -webkit-mask-position: 19px;
+            mask-position: 19px;
+  }
 }
 
 .stripe-mask{
@@ -2031,82 +2096,82 @@ a:not(.customLink):hover {
 .waveTextAnimated span {
   display: inline-block;
   -webkit-animation: wave-text 0.5s ease-in-out infinite;
-  animation: wave-text 0.5s ease-in-out infinite;
+          animation: wave-text 0.5s ease-in-out infinite;
 }
 
 .waveTextAnimated span:nth-of-type(1) {
   -webkit-animation-delay: 0s;
-  animation-delay: 0s;
+          animation-delay: 0s;
 }
 
 .waveTextAnimated span:nth-of-type(2) {
   -webkit-animation-delay: 0.05s;
-  animation-delay: 0.05s;
+          animation-delay: 0.05s;
 }
 
 .waveTextAnimated span:nth-of-type(3) {
   -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
+          animation-delay: 0.1s;
 }
 
 .waveTextAnimated span:nth-of-type(4) {
   -webkit-animation-delay: 0.15s;
-  animation-delay: 0.15s;
+          animation-delay: 0.15s;
 }
 
 .waveTextAnimated span:nth-of-type(5) {
   -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 .waveTextAnimated span:nth-of-type(6) {
   -webkit-animation-delay: 0.25s;
-  animation-delay: 0.25s;
+          animation-delay: 0.25s;
 }
 
 .waveTextAnimated span:nth-of-type(7) {
   -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
 .waveTextAnimated span:nth-of-type(8) {
   -webkit-animation-delay: 0.35s;
-  animation-delay: 0.35s;
+          animation-delay: 0.35s;
 }
 
 .waveTextAnimated span:nth-of-type(9) {
   -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 .waveTextAnimated span:nth-of-type(10) {
   -webkit-animation-delay: 0.45s;
-  animation-delay: 0.45s;
+          animation-delay: 0.45s;
 }
 
 .waveTextAnimated span:nth-of-type(11) {
   -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .waveTextAnimated span:nth-of-type(12) {
   -webkit-animation-delay: 0.55s;
-  animation-delay: 0.55s;
+          animation-delay: 0.55s;
 }
 
 .waveTextAnimated span:nth-of-type(13) {
   -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
 .waveTextAnimated span:nth-of-type(14) {
   -webkit-animation-delay: 0.65s;
-  animation-delay: 0.65s;
+          animation-delay: 0.65s;
 }
 
 .waveTextAnimated span:nth-of-type(15) {
   -webkit-animation-delay: 0.7s;
-  animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 @-webkit-keyframes wave-text {
@@ -2145,14 +2210,22 @@ a:not(.customLink):hover {
 .flag-container::before {
   position: absolute;
   left: 0px;
-  top: -0.25rem;
+  top: 0px;
   z-index: 10;
-  height: 4rem;
+  height: 3rem;
   width: 0.25rem;
   border-radius: 9999px;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(173 79 65 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 640px) {
+  .flag-container::before {
+    top: -0.25rem;
+    content: var(--tw-content);
+    height: 4rem;
+  }
 }
 
 .flag {
@@ -2164,13 +2237,25 @@ a:not(.customLink):hover {
   padding-left: 0.75rem;
   padding-right: 0.5rem;
   font-family: AuthenticSansCondensed, Arial Narrow, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 0.1em;
-  mask: url('../img/flag-mask.svg');
   -webkit-mask: url('../img/flag-mask.svg');
-  mask-size: contain;
+          mask: url('../img/flag-mask.svg');
   -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-animation: flag-move 2s linear infinite;
+          animation: flag-move 2s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .flag {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    line-height: 1;
+  }
 }
 
 .before\:animate-spinB-1::before{
@@ -2234,8 +2319,8 @@ a:not(.customLink):hover {
 }
 
 .before\:animate-spinB::before{
-  -webkit-animation-duration: 10s !important;
-          animation-duration: 10s !important;
+  -webkit-animation-duration: 20s !important;
+          animation-duration: 20s !important;
   /* animation-direction: reverse !important; */
   mask-size: contain;
   mask-repeat: no-repeat;
@@ -2257,73 +2342,74 @@ a:not(.customLink):hover {
 
 .ll{
   fill: #FFFFFF;
-  -webkit-animation: pulseletters 0.6s ease infinite;
-          animation: pulseletters 0.6s ease infinite;
+  --delay: 0.1;
+  -webkit-animation: pulseletters 12s ease infinite;
+          animation: pulseletters 12s ease infinite;
 }
 
 .ll01{
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s
+  -webkit-animation-delay: calc(var(--delay) * 1s);
+          animation-delay: calc(var(--delay) * 1s);
 }
 
 .ll02{
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s
+  -webkit-animation-delay: calc(var(--delay) * 2s);
+          animation-delay: calc(var(--delay) * 2s);
 }
 
 .ll03{
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s
+  -webkit-animation-delay: calc(var(--delay) * 3s);
+          animation-delay: calc(var(--delay) * 3s);
 }
 
 .ll04{
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s
+  -webkit-animation-delay: calc(var(--delay) * 4s);
+          animation-delay: calc(var(--delay) * 4s);
 }
 
 .ll05{
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s
+  -webkit-animation-delay: calc(var(--delay) * 5s);
+          animation-delay: calc(var(--delay) * 5s);
 }
 
 .ll06{
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s
+  -webkit-animation-delay: calc(var(--delay) * 6s);
+          animation-delay: calc(var(--delay) * 6s);
 }
 
 .ll07{
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s
+  -webkit-animation-delay: calc(var(--delay) * 7s);
+          animation-delay: calc(var(--delay) * 7s);
 }
 
 .ll08{
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s
+  -webkit-animation-delay: calc(var(--delay) * 8s);
+          animation-delay: calc(var(--delay) * 8s);
 }
 
 .ll09{
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s
+  -webkit-animation-delay: calc(var(--delay) * 9s);
+          animation-delay: calc(var(--delay) * 9s);
 }
 
 .ll10{
-  -webkit-animation-delay: 1.0s;
-          animation-delay: 1.0s
+  -webkit-animation-delay: calc(var(--delay) * 10s);
+          animation-delay: calc(var(--delay) * 10s);
 }
 
 .ll11{
-  -webkit-animation-delay: 1.1s;
-          animation-delay: 1.1s
+  -webkit-animation-delay: calc(var(--delay) * 11s);
+          animation-delay: calc(var(--delay) * 11s);
 }
 
 .ll12{
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s
+  -webkit-animation-delay: calc(var(--delay) * 12s);
+          animation-delay: calc(var(--delay) * 12s);
 }
 
 .ll13{
-  -webkit-animation-delay: 1.3s;
-          animation-delay: 1.3s
+  -webkit-animation-delay: calc(var(--delay) * 13s);
+          animation-delay: calc(var(--delay) * 13s);
 }
 
 @-webkit-keyframes pulseletters{
@@ -2527,16 +2613,6 @@ nav li a:hover,
   top: -1.5rem;
 }
 
-.before\:left-0::before {
-  content: var(--tw-content);
-  left: 0px;
-}
-
-.before\:-bottom-1::before {
-  content: var(--tw-content);
-  bottom: -0.25rem;
-}
-
 .before\:left-\[-3\.5rem\]::before {
   content: var(--tw-content);
   left: -3.5rem;
@@ -2545,11 +2621,6 @@ nav li a:hover,
 .before\:top-\[-3rem\]::before {
   content: var(--tw-content);
   top: -3rem;
-}
-
-.before\:z-10::before {
-  content: var(--tw-content);
-  z-index: 10;
 }
 
 .before\:block::before {
@@ -2567,11 +2638,6 @@ nav li a:hover,
   height: 100%;
 }
 
-.before\:h-16::before {
-  content: var(--tw-content);
-  height: 4rem;
-}
-
 .before\:h-40::before {
   content: var(--tw-content);
   height: 10rem;
@@ -2580,11 +2646,6 @@ nav li a:hover,
 .before\:w-full::before {
   content: var(--tw-content);
   width: 100%;
-}
-
-.before\:w-1::before {
-  content: var(--tw-content);
-  width: 0.25rem;
 }
 
 .before\:w-40::before {
@@ -2681,6 +2742,10 @@ nav li a:hover,
   display: none;
 }
 
+.last-of-type\:hidden:last-of-type {
+  display: none;
+}
+
 .hover\:rotate-\[360deg\]:hover {
   --tw-rotate: 360deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2749,6 +2814,10 @@ nav li a:hover,
     top: -0.3rem;
   }
 
+  .sm\:bottom-5 {
+    bottom: 1.25rem;
+  }
+
   .sm\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -2766,8 +2835,32 @@ nav li a:hover,
     margin-top: -0.05rem;
   }
 
+  .sm\:mt-1\.5 {
+    margin-top: 0.375rem;
+  }
+
+  .sm\:mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .sm\:ml-16 {
+    margin-left: 4rem;
+  }
+
+  .sm\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .sm\:mt-40 {
+    margin-top: 10rem;
+  }
+
   .sm\:block {
     display: block;
+  }
+
+  .sm\:inline {
+    display: inline;
   }
 
   .sm\:flex {
@@ -2854,6 +2947,10 @@ nav li a:hover,
     padding-bottom: 5rem;
   }
 
+  .sm\:text-left {
+    text-align: left;
+  }
+
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2866,6 +2963,10 @@ nav li a:hover,
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .sm\:leading-6 {
+    line-height: 1.5rem;
   }
 
   .group:hover .sm\:group-hover\:opacity-100 {
@@ -2998,6 +3099,10 @@ nav li a:hover,
     padding-top: 2rem;
   }
 
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
+
   .md\:text-\[6rem\] {
     font-size: 6rem;
   }
@@ -3115,10 +3220,6 @@ nav li a:hover,
     margin-top: -0.4rem;
   }
 
-  .xl\:mt-4 {
-    margin-top: 1rem;
-  }
-
   .xl\:block {
     display: block;
   }
@@ -3167,17 +3268,20 @@ nav li a:hover,
     background-size: 50%;
   }
 
-  .xl\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
   .xl\:pb-0 {
     padding-bottom: 0px;
   }
 
   .xl\:pt-0 {
     padding-top: 0px;
+  }
+
+  .xl\:pt-3 {
+    padding-top: 0.75rem;
+  }
+
+  .xl\:pb-1 {
+    padding-bottom: 0.25rem;
   }
 
   .xl\:font-sans {
@@ -3249,9 +3353,9 @@ nav li a:hover,
     border-bottom-width: 0.3rem;
   }
 
-  .\33xl\:py-16 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  .\33xl\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .\33xl\:text-\[6\.2rem\] {

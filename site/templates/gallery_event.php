@@ -99,18 +99,63 @@
         <main class="pt-20">
             <div class="max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
                 <div class="mt-20 flex flex-wrap sm:flex-nowrap sm:space-x-12">
-
                     <div id="lightgallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
-                        <?php foreach ($page->gallery()->toFiles() as $image): ?>
+                        <?php foreach ($page->gallery_0()->toFiles() as $image): ?>
                             <a href="<?= $image->resize(2500)->url() ?>" data-responsive="<?= $image->resize(800)->url() ?> 400, <?= $image->resize(1500)->url() ?> 1024," class="customLink">
-                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" />
+                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl" />
                             </a>
                         <?php endforeach ?>
                     </div>
-
-
                 </div>
+                
+                <?php if( $page->gallery_1_toggle()->toBool() || $page->gallery_2_toggle()->toBool() ): ?>
+                <div class="mt-4"><?= $page->gallery_1_photographer() ?></div>
+                <?php endif ?>
             </div>
+
+
+
+
+            <?php if( $page->gallery_1_toggle()->toBool() ): ?>
+            <div class="max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
+                <div class="mt-20 flex flex-wrap sm:flex-nowrap sm:space-x-12">
+                    <div id="lightgallery1" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
+                        <?php foreach ($page->gallery_1()->toFiles() as $image): ?>
+                            <a href="<?= $image->resize(2500)->url() ?>" data-responsive="<?= $image->resize(800)->url() ?> 400, <?= $image->resize(1500)->url() ?> 1024," class="customLink">
+                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl" />
+                            </a>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+
+                <div class="mt-4"><?= $page->gallery_1_photographer() ?></div>
+            </div>
+            <?php endif ?>
+
+
+
+
+            <?php if( $page->gallery_2_toggle()->toBool() ): ?>
+            <div class="max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
+                <div class="mt-20 flex flex-wrap sm:flex-nowrap sm:space-x-12">
+                    <div id="lightgallery2" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
+                        <?php foreach ($page->gallery_2()->toFiles() as $image): ?>
+                            <a href="<?= $image->resize(2500)->url() ?>" data-responsive="<?= $image->resize(800)->url() ?> 400, <?= $image->resize(1500)->url() ?> 1024," class="customLink">
+                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl" />
+                            </a>
+                        <?php endforeach ?>
+                    </div>
+                </div>
+
+                <div class="mt-4"><?= $page->gallery_2_photographer() ?></div>
+            </div>
+            <?php endif ?>
+
+
+
+            
+
+
 
 
 
@@ -126,6 +171,20 @@
                 download: false,
                 getCaptionFromTitleOrAlt: false
             });
+
+            <?php if( $page->gallery_1_toggle()->toBool() ): ?>
+                lightGallery(document.getElementById('lightgallery1'), {
+                    download: false,
+                    getCaptionFromTitleOrAlt: false
+                });
+            <?php endif ?>
+
+            <?php if( $page->gallery_2_toggle()->toBool() ): ?>
+                lightGallery(document.getElementById('lightgallery2'), {
+                    download: false,
+                    getCaptionFromTitleOrAlt: false
+                });
+            <?php endif ?>
         </script>
     </body>
 </html>

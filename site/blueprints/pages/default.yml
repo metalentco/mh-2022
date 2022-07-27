@@ -42,6 +42,7 @@ columns:
               - gallery_caption
               - image_download
               - imageText
+              - textBlockMini
   sidebar:
     width: 1/3
     sections:

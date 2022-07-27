@@ -26,27 +26,12 @@
         <?php snippet('header') ?>
         <div class="fixed w-full z-30 pointer-events-none sm:hidden flex">
             <div class="relative mx-auto">
-            
-            <?php if( $page->status_event()->isNotEmpty() ): ?>
-                <div class="absolute -bottom-10 left-2">
-                    <div class="-skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-bottom-1 before:rounded-full before:z-10">
-                        <div class="flag"><?= $page->status_event() ?></div>
-                    </div>
-                </div>
-            <?php elseif( $page->availability()->isFalse() ): ?>
-                <div class="absolute -bottom-10 left-2">
-                    <div class="-skew-x-12 before:w-1 before:bg-clink before:absolute before:h-16 before:left-0 before:-bottom-1 before:rounded-full before:z-10">
-                        <div class="flag">Ausverkauft</div>
-                    </div>
-                </div>
-            <?php endif ?>
-            
-            <?php if( $page->ticket()->isNotEmpty() ): ?>
-            <a href="<?= $page->ticket() ?>" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
-                <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
-                <span class="group-hover:opacity-0">Ticket kaufen</span>
-            </a>
-            <?php endif ?>
+                <?php if( $page->ticket()->isNotEmpty() ): ?>
+                <a href="<?= $page->ticket() ?>" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
+                    <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
+                    <span class="group-hover:opacity-0">Ticket kaufen</span>
+                </a>
+                <?php endif ?>
             
             </div>
         </div>
@@ -63,21 +48,6 @@
                     <h1 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] xl:pt-0 md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-6xl md:text-7xl xl:text-8xl 3xl:text-[7rem] -ml-2"><?= $page->title(); ?></h1>
                 </div>
                 <div class="mb-3 shrink-0 hidden sm:block relative">
-                    <?php if( $page->status_event()->isNotEmpty() ): ?>
-                        <div class="absolute -top-10 left-2">
-                            <div class="flag-container">
-                                <div class="flag"><?= $page->status_event() ?></div>
-                            </div>
-                        </div>
-                    <?php elseif( $page->availability()->isFalse() ): ?>
-                        <div class="absolute -top-10 left-2">
-                            <div class="flag-container">
-                                <div class="flag">Ausverkauft</div>
-                            </div>
-                        </div>
-                    <?php endif ?>
-
-
                     <?php if( $page->ticket()->isNotEmpty() ): ?>
                     <a href="<?= $page->ticket() ?>" type="submit" class="block customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                         <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
@@ -95,21 +65,38 @@
             <div class="w-full">
                 <p class="text-base md:text-2xl"><?= $page->subtitle(); ?></p>
             </div>
-            <div class="mx-auto md:mx-0 mt-2 md:mt-0 flex items-center space-x-2 text-base md:text-xl sm:min-w-[8rem] md:min-w-[10rem] xl:min-w-[15rem] 3xl:min-w-[22rem]">
+            <div class="md:mx-0 mt-2 md:mt-0 flex space-x-2 text-base md:text-xl sm:min-w-[8rem] md:min-w-[10rem] xl:min-w-[15rem] 3xl:min-w-[22rem]">
                 <?php if( $page->country()->isNotEmpty() ): ?>
                 <div class="inline-block pt-2 uppercase text-chover bg-cbase rounded-[50%] w-10 h-7 md:w-12 md:h-8 text-center font-bold py-1 px-1 leading-none">
                     <?= $page->country() ?>
                 </div>
                 <?php endif ?>
-                <div class="inline-block leading-none"><?= $page->style() ?></div>
+                <div class="inline-block leading-none mt-[0.5rem] sm:mt-1.5 sm:leading-6">
+                    <?php foreach( $page->style()->split() as $style ):  ?>
+                        <?= $style ?><span class="sm:hidden last-of-type:hidden">, </span><br class="hidden sm:inline">
+                    <?php endforeach ?>
+                </div>
             </div>
         </div>
 
 
 
 
-        <main class="pt-20">
+        <main class="pt-6">
             <div class="max-w-5xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
+
+                <div class="inline-block left-1/2 relative -translate-x-1/2 mb-8">
+                <?php if( $page->status_event()->isNotEmpty() ): ?>
+                    <div class="flag-container">
+                        <div class="flag"><?= $page->status_event() ?></div>
+                    </div>
+                <?php elseif( $page->availability()->isFalse() ): ?>
+                    <div class="flag-container">
+                        <div class="flag">Ausverkauft</div>
+                    </div>
+                <?php endif ?>
+                </div>
+
                 <div class="text-center text-xl sm:text-2xl font-bold text-clink">
                     <?= $page->warning(); ?>
                 </div>

@@ -47,16 +47,20 @@
                         <?php foreach($eventsGallery as $event): ?>
                             <a href="<?= $event->url() ?>">
                                 <figure class="mt-12">
-                                    <img class="grayscale rounded-[2rem] lg:rounded-[4rem]" src="<?= $event->gallery()->toFiles()->first()->url() ?>" alt="<?= $event->title() ?> &middot; <?= $site->title() ?>" />
-                                    <figcaption class="ml-16 mt-2">
-                                        <span class="text-[2.4rem] font-sansC">
+                                    <div class="aspect-video bg-chover rounded-[2rem] lg:rounded-[4rem]">
+                                        <img class="grayscale rounded-[2rem] lg:rounded-[4rem] w-full object-cover" src="<?= $event->gallery()->toFiles()->first()->resize(2500)->url() ?>" alt="<?= $event->title() ?> &middot; <?= $site->title() ?>" />
+                                    </div>
+                                    <figcaption class="sm:ml-16 mt-2">
+                                        <span class="text-2xl md:text-4xl xl:text-6xl 3xl:text-[6.2rem] font-sansC">
+                                            <span class="text-[105%]">
                                             <?php if( $event->date()->isNotEmpty() ): ?>
                                                 <?= $event->date()->toDate('j.n.Y') ?>
                                             <?php else: ?>
                                                 <?= page($event->past_event())->date()->toDate('j.n.Y'); ?>
                                             <?php endif ?>
+                                            </span>
                                         </span>
-                                        <span class="font-heading text-4xl text-clink"><?= $event->title() ?></span>
+                                        <span class="font-heading text-2xl md:text-4xl xl:text-6xl 3xl:text-[6rem] text-clink"><?= $event->title() ?></span>
                                     </figcaption>
                                 </figure>
                             </a>
@@ -65,77 +69,68 @@
                 </div>
 
 
-                <div id="act-history" class="pt-20 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
-                    <div class="mt-24 lg:mt-32">
+                <div id="act-history" class="pt-20 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6 overflow-hidden">
+                    <div class="sm:mt-24 lg:mt-32">
+                        <h2>Artist History</h2>
 
-                    <div id="dateSlider" class="mt-40"></div>
+                        <div id="dateSlider" class="mt-28 sm:mt-40"></div>
 
 
-                    <form class="mt-10 sm:flex">
-                        <label for="search" class="sr-only">Suche</label>
-                        <input type="text" name="search" id="search" autocomplete="email" required class="pt-[0.8rem] pb-[0.65rem] mt-3 appearance-none min-w-0 w-full bg-white rounded-xl px-4 text-chover placeholder-gray-400 border-none focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover" placeholder="Künstler">
-                        <div class="rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                            <button type="submit" class="relative overflow-hidden group mt-3 bg-clink px-7 py-3 text-cbase uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover w-full">
-                                <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Suchen">Suchen</span>
-                                <span class="group-hover:opacity-0">Suchen</span>
-                            </button>
-                        </div>
-                    </form>
+                        <form class="mt-10 sm:flex">
+                            <label for="search" class="sr-only">Suche</label>
+                            <input type="text" name="search" id="search" autocomplete="email" required class="pt-[0.8rem] pb-[0.65rem] mt-3 appearance-none min-w-0 w-full bg-white rounded-xl px-4 text-chover placeholder-gray-400 border-none focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover" placeholder="Künstler">
+                            <div class="rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                                <button type="submit" class="relative overflow-hidden group mt-3 bg-clink px-7 py-3 text-cbase uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover w-full">
+                                    <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Suchen">Suchen</span>
+                                    <span class="group-hover:opacity-0">Suchen</span>
+                                </button>
+                            </div>
+                        </form>
 
-                    <div class="mt-12">
-                        <?php foreach($eventsGalleryHistory as $event): ?>
-                            <?php
-                                $linkStart = "";
-                                $linkEnd = "";
-                                $eventDate = "";
-                                if ( $event->past_event()->exists() ){
-                                    $linkStart = "<a href=" . $event->url() . " class='customLink'>";
-                                    $linkEnd = "</a>";
-                                }
-                                else if ( !$event->past_event()->exists() ) {
+                        <div class="mt-12">
+                            <?php foreach($eventsGalleryHistory as $event): ?>
+                                <?php
+                                    $linkStart = "";
+                                    $linkEnd = "";
+                                    $eventDate = "";
+                                    if ( $event->past_event()->exists() ){
+                                        $linkStart = "<a href=" . $event->url() . " class='customLink'>";
+                                        $linkEnd = "</a>";
+                                    }
+                                    else if ( !$event->past_event()->exists() ) {
 
-                                    // check if $event->id() exists in one of $eventsGallery's children and link to that child
-                                    // @konradm make more performant?
-                                    foreach( $eventsGallery as $e ){
-                                        if( $e->past_event() == $event->id()) {
-                                            $linkStart = "<a href=" . $e->url() . " class='customLink'>";
-                                            $linkEnd = "</a>";
-                                            break;
+                                        // check if $event->id() exists in one of $eventsGallery's children and link to that child
+                                        // @konradm make more performant?
+                                        foreach( $eventsGallery as $e ){
+                                            if( $e->past_event() == $event->id()) {
+                                                $linkStart = "<a href=" . $e->url() . " class='customLink'>";
+                                                $linkEnd = "</a>";
+                                                break;
+                                            }
                                         }
+
                                     }
 
-                                }
-
-                                if( $event->date()->isNotEmpty() ){
-                                    $eventDate = $event->date();
-                                } else {
-                                    $eventDate = page($event->past_event())->date();
-                                }
-                            ?>
+                                    if( $event->date()->isNotEmpty() ){
+                                        $eventDate = $event->date();
+                                    } else {
+                                        $eventDate = page($event->past_event())->date();
+                                    }
+                                ?>
 
 
-                            <div class="galleryObject inline  mr-4" date="<?= $eventDate ?>">
-                                <?= $linkStart ?>
-                                    <span class="text-[1.6rem] font-sansC">
-                                        <?= $eventDate->toDate('j.n.Y') ?>
-                                    </span>
-                                    <span class="font-heading text-2xl text-clink"><?= $event->title() ?></span>
-                                <?= $linkEnd ?>
-                            </div>
-                        <?php endforeach ?>
+                                <div class="galleryObject inline  mr-4" date="<?= $eventDate ?>">
+                                    <?= $linkStart ?>
+                                        <span class="text-[1.6rem] font-sansC">
+                                            <?= $eventDate->toDate('j.n.Y') ?>
+                                        </span>
+                                        <span class="font-heading text-2xl text-clink"><?= $event->title() ?></span>
+                                    <?= $linkEnd ?>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
-
-
-
-
-
-
-
-
-                    </div>
-
                 </div>
-
             </main>
 
         <?php snippet('footer') ?>
