@@ -1319,6 +1319,10 @@ a:not(.customLink):hover {
   flex-grow: 1;
 }
 
+.basis-full {
+  flex-basis: 100%;
+}
+
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2851,6 +2855,10 @@ nav li a:hover,
     margin-top: 10rem;
   }
 
+  .sm\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -2905,6 +2913,10 @@ nav li a:hover,
 
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .sm\:flex-nowrap {
@@ -2965,6 +2977,10 @@ nav li a:hover,
     line-height: 1.5rem;
   }
 
+  .sm\:first-of-type\:mt-0:first-of-type {
+    margin-top: 0px;
+  }
+
   .group:hover .sm\:group-hover\:opacity-100 {
     opacity: 1;
   }
@@ -3012,6 +3028,14 @@ nav li a:hover,
     display: block;
   }
 
+  .md\:inline {
+    display: inline;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:h-\[90vh\] {
     height: 90vh;
   }
@@ -3040,6 +3064,10 @@ nav li a:hover,
     max-width: 36rem;
   }
 
+  .md\:basis-full {
+    flex-basis: 100%;
+  }
+
   .md\:columns-2 {
     -moz-columns: 2;
          columns: 2;
@@ -3055,6 +3083,10 @@ nav li a:hover,
 
   .md\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .md\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .md\:flex-nowrap {
@@ -3158,6 +3190,10 @@ nav li a:hover,
   .md\:before\:w-80::before {
     content: var(--tw-content);
     width: 20rem;
+  }
+
+  .md\:first-of-type\:mt-0:first-of-type {
+    margin-top: 0px;
   }
 }
 

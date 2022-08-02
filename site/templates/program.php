@@ -314,7 +314,7 @@
                                     }
                                 }
                                 $stripe_mask = "";
-                                if( $event->status_event()->isNotEmpty() || ($event->availability() != "erhältlich") ){
+                                if( $event->status_event()->isNotEmpty() || ($event->availability() != "available") ){
                                     $stripe_mask = "stripe-mask";
                                 }
                             ?>
@@ -336,10 +336,10 @@
                                     <?php if( $event->status_event()->isNotEmpty() ): ?>
                                         <div class="absolute right-0 xl:-right-10 bottom-2 sm:bottom-5">
                                             <div class="flag-container">
-                                                <div class="flag"><?= $event->status_event() ?></div>
+                                            <div class="flag"><?= $event->blueprint()->field('status_event')['options'][$event->status_event()->value()] ?></div>
                                             </div>
                                         </div>
-                                    <?php elseif( $event->availability() != "erhältlich" ): ?>
+                                    <?php elseif( $event->availability() != "available" ): ?>
                                         <div class="absolute right-0 xl:-right-10 bottom-2 sm:bottom-5">
                                             <div class="flag-container">
                                                 <div class="flag">Ausverkauft</div>

@@ -60,20 +60,24 @@
 
 
 
-
         <div class="flex flex-wrap md:flex-nowrap md:flex-row-reverse md:justify-end items-start max-w-7xl 3xl:max-w-[120rem] mx-auto p-3 md:px-6">
             <div class="w-full">
                 <p class="text-base md:text-2xl"><?= $page->subtitle(); ?></p>
             </div>
             <div class="md:mx-0 mt-2 md:mt-0 flex space-x-2 text-base md:text-xl sm:min-w-[8rem] md:min-w-[10rem] xl:min-w-[15rem] 3xl:min-w-[22rem]">
-                <?php if( $page->country()->isNotEmpty() ): ?>
-                <div class="inline-block pt-2 uppercase text-chover bg-cbase rounded-[50%] w-10 h-7 md:w-12 md:h-8 text-center font-bold py-1 px-1 leading-none">
-                    <?= $page->country() ?>
+                <div class="flex md:flex-wrap">
+                    <?php foreach( $page->country()->split() as $country ):  ?>
+                    <div class="md:mt-2 md:first-of-type:mt-0 mr-2 md:basis-full">
+                        <div class="inline-block pt-2 uppercase text-chover bg-cbase rounded-[50%] w-10 h-7 md:w-12 md:h-8 text-center font-bold py-1 px-1 leading-none">
+                            <?= $country ?>
+                        </div>
+                    </div>
+                    <?php endforeach ?>
                 </div>
-                <?php endif ?>
+
                 <div class="inline-block leading-none mt-[0.5rem] sm:mt-1.5 sm:leading-6">
                     <?php foreach( $page->style()->split() as $style ):  ?>
-                        <?= $style ?><span class="sm:hidden last-of-type:hidden">, </span><br class="hidden sm:inline">
+                        <?= Str::ucfirst($style) ?><span class="md:hidden last-of-type:hidden">, </span><br class="hidden md:inline">
                     <?php endforeach ?>
                 </div>
             </div>
@@ -88,9 +92,9 @@
                 <div class="inline-block left-1/2 relative -translate-x-1/2 mb-8">
                 <?php if( $page->status_event()->isNotEmpty() ): ?>
                     <div class="flag-container">
-                        <div class="flag"><?= $page->status_event() ?></div>
+                        <div class="flag"><?= $page->blueprint()->field('status_event')['options'][$page->status_event()->value()] ?></div>
                     </div>
-                <?php elseif( $page->availability()->isFalse() ): ?>
+                <?php elseif( $page->availability() != "available" ): ?>
                     <div class="flag-container">
                         <div class="flag">Ausverkauft</div>
                     </div>

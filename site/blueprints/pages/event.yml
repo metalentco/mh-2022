@@ -37,13 +37,6 @@ tabs:
               - strike
             nodes: false
             help: Hinweis / Warnung zuoberst
-          postponed_link:
-            label: Neuer Event
-            type: select
-            options: query
-            query: site.find("home").children
-            when:
-              status: Verschoben
           line0:
             type: line
           cover:
@@ -65,25 +58,34 @@ tabs:
               - "einblenden"
           country:
             label: Land
-            type: select
+            type: tags
             width: 1/2
-            default: ch
-            options:
-              ch: CH
-              de: DE
-              fr: FR
-              us: US
+            # default: ch
+            # options:
+            #   ch: CH
+            #   de: DE
+            #   fr: FR
+            #   us: US
+            options: api
+            api:
+              url: assets/world.json
+              fetch: Countries
+              text: "{{ item.name }} &middot; {{ item.alpha2.upper() }}"
+              value: "{{ item.alpha2 }}"
           style:
             label: Stil
             type: tags
             width: 1/2
-            options:
-              - Hardrock
-              - Hip Hop
-              - Jazz
-              - Pop
-              - Rap
-              - Rock
+            # options:
+            #   - Hardrock
+            #   - Hip Hop
+            #   - Jazz
+            #   - Pop
+            #   - Rap
+            #   - Rock
+            options: api
+            api:
+              url: assets/genres.json
           line1:
             type: line
           ticket:
@@ -130,7 +132,7 @@ tabs:
             type: line
           text:
             label: Haupttext
-            type: textarea
+            type: writer
             size: large
           media:
             type: blocks
@@ -139,8 +141,8 @@ tabs:
               - image
           text_end:
             label: Text nach Medien
-            type: textarea
-            size: small
+            type: writer
+            size: medium
             help: Fakultativ
             
 
@@ -156,15 +158,18 @@ tabs:
               availability:
                 label: Tickets
                 type: toggles
+                default: available
                 options:
-                  - erhältlich
-                  - ausverkauft
+                  - value: available
+                    text: erhältlich
+                  - value: soldout
+                    text: ausverkauft
               status_event:
-                label: Status
+                label: Ausnahmestatus
                 type: select
                 options:
-                  - abgesagt
-                  - verschoben
+                  canceled: abgesagt
+                  postponed: verschoben
               date:
                 label: Datum
                 type: date
@@ -175,17 +180,19 @@ tabs:
               open2:
                 label: Türöffnung
                 type: time
+                default: 18:30
               open3:
                 label: Konzertbeginn
                 type: time
+                default: 20:00
               location:
                 label: Spielort
                 type: select
                 default: muehle
                 options:
-                  - openair: Bühne am Teich
-                  - muehle: Mühle Hunziken
-                  - garten: Mühligarten
+                  openair: Bühne am Teich
+                  muehle: Mühle Hunziken
+                  garden: Mühligarten
               line10:
                 type: line
               author:
