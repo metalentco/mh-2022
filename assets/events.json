@@ -1,0 +1,30 @@
+{
+    "events":
+    [
+      {
+        "date": "2000-01-15",
+        "title":"John Trudell and Bad Dog",
+        "country":"CH"
+      },
+      {
+        "date": "2000-02-03",
+        "title": "Polo Hofer und die Schmetterband (CH)",
+        "country": "CH"
+      },
+      {
+        "date": "2000-02-11",
+        "title": "Shoppers",
+        "country": "CH"
+      },
+      {
+        "date": "2000-02-12",
+        "title": "Romano Drom",
+        "country": "HU"
+      },
+      {
+        "date": "2000-02-18",
+        "title": "Jim Kahr Group",
+        "country": "US"
+      }
+    ]
+  }

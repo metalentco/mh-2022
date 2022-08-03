@@ -5,8 +5,7 @@ return [
         'install' => true
     ],
     'api' => [
-        'allowInsecure' => true,
-        'basicAuth' => true
+        'allowInsecure' => true
     ],
     'hooks' => [
         'page.create:after' => function ($page) {
