@@ -176,6 +176,11 @@
                 top: -1.5rem;
                 right: -1.5rem;
                 box-shadow: none;
+                cursor: grab;
+            }
+
+            #dateSlider .noUi-handle:active{
+                cursor: grabbing;
             }
 
             #dateSlider .noUi-handle:before,

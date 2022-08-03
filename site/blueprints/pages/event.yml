@@ -43,6 +43,11 @@ tabs:
             type: files
             multiple: false
             query: page.images
+            width: 3/4
+          cover_filter:
+            type: toggle
+            label: Filter für schlechte Fotos
+            width: 1/4
           subtitle:
             label: Untertitel
             type: textarea

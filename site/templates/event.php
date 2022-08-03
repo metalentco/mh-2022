@@ -7,6 +7,7 @@
         <style>
             .coverImage{
                 background-image: url( <?= $page->cover()->toFile()->resize(1000)->url() ?>);
+
             }
             @media(min-width: 1024px){
                 .coverImage{
@@ -24,10 +25,10 @@
     </head>
     <body class="bg-cbackground text-cbase">
         <?php snippet('header') ?>
-        <div class="fixed w-full z-30 pointer-events-none sm:hidden flex">
-            <div class="relative mx-auto">
+        <div class="fixed w-full z-30 pointer-events-none flex justify-end md:pr-40">
+            <div class="relative mx-auto md:mx-0">
                 <?php if( $page->ticket()->isNotEmpty() ): ?>
-                <a href="<?= $page->ticket() ?>" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
+                <a href="<?= $page->ticket() ?>" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 md:mt-[3.8rem] bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                     <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
                     <span class="group-hover:opacity-0">Ticket kaufen</span>
                 </a>
@@ -35,9 +36,12 @@
             
             </div>
         </div>
-        <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top <?php if($page->cover()->isNotEmpty()){ echo "coverImage"; } ?>">
-            <!-- @konradm todo <div class="min-h-[90vh] w-full bg-[url('')]"> -->
-            <div class="text-white mb-2 flex items-end justify-between w-full max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
+        <!-- <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top <?php if($page->cover()->isNotEmpty()){ echo "coverImage"; } ?>"> -->
+        <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover relative overflow-hidden">
+            <div class="absolute pointer-events-none left-0 right-0 top-0 bottom-0 before:w-full before:h-1/2 before:bg-gradient-to-t before:from-black/30 before:z-10 before:absolute before:bottom-0 <?php if($page->cover_filter()->toBool()){ echo 'halftone'; } ?>">
+                <img class="w-full h-full object-cover object-top" src="<?php if($page->cover()->isNotEmpty()){ echo $page->cover()->toFile()->resize(1000)->url(); } ?>">
+            </div>
+            <div class="text-white mb-2 flex items-end justify-between w-full max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6 z-10">
                 <div>
                     <div class="mr-2 whitespace-nowrap text-lg leading-none sm:text-2xl md:text-4xl xl:text-6xl 3xl:text-[6.2rem] sm:min-w-[8rem] md:min-w-[10rem] xl:min-w-[15rem] 3xl:min-w-[22rem]">
                         <span class="font-sansC md:font-extralight xl:font-sans uppercase mr-[-4px] text-[70%] md:text-[80%] xl:text-[78%] relative top-[-0.2rem] sm:top-[-0.3rem] md:top-[-0.35rem] xl:top-[-0.55rem] 3xl:top-[-0.95rem] border-white border-b-[0.1rem] sm:border-b-2 md:border-b-2 xl:border-b-[0.2rem] 3xl:border-b-[0.3rem] inline-block leading-[0.9em] md:leading-[0.8em]"><?= substr(strval($page->date()->toDate('D')), 0, -1); ?></span>
@@ -47,14 +51,14 @@
                 <div class="grow">
                     <h1 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] xl:pt-0 md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-6xl md:text-7xl xl:text-8xl 3xl:text-[7rem] -ml-2"><?= $page->title(); ?></h1>
                 </div>
-                <div class="mb-3 shrink-0 hidden sm:block relative">
+                <!-- <div class="mb-3 shrink-0 hidden sm:block relative">
                     <?php if( $page->ticket()->isNotEmpty() ): ?>
                     <a href="<?= $page->ticket() ?>" type="submit" class="block customLink font-heading relative overflow-hidden group mt-3 bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
                         <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
                         <span class="group-hover:opacity-0">Ticket kaufen</span>
                     </a>
                     <?php endif ?>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -290,6 +294,38 @@
             }
             .addeventatc .addeventatc_dropdown .copyx{
                 display: none;
+            }
+
+
+
+            .halftone {
+                filter: contrast(25000%);
+                transform: translateZ(0); /* force a HW accelerated layer */
+                filter: contrast(50) grayscale(1);
+            }
+
+            .halftone > * {
+                filter: brightness(0.5) blur(2px);
+            }
+
+            .halftone::after {
+                content: '';
+                position: absolute;
+                top: -100%;
+                left: -100%;
+                right: -100%;
+                bottom: -100%;
+                background-blend-mode: multiply;
+                background:
+                    radial-gradient(5px 5px, cyan, white),
+                    radial-gradient(5px 5px, magenta, white),
+                    radial-gradient(5px 5px, yellow, white);
+                background-size: 5px 5px;
+                background-position: 0 -3px, -2px 0, 2px 0;
+                mix-blend-mode: screen;
+                pointer-events: none;
+                transform: rotate(5deg);
+                z-index: 1;
             }
         </style>
     </body>
