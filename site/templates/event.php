@@ -81,7 +81,11 @@
 
                 <div class="inline-block leading-none mt-[0.5rem] sm:mt-1.5 sm:leading-6">
                     <?php foreach( $page->style()->split() as $style ):  ?>
-                        <?= Str::ucfirst($style) ?><span class="md:hidden last-of-type:hidden">, </span><br class="hidden md:inline">
+                        <?php if( V::num($style) ): ?>
+                            <?= Json::read("assets/genres.json")[$style] ?><span class="md:hidden last-of-type:hidden">, </span><br class="hidden md:inline">
+                        <?php else: ?>
+                            <?= $style ?><span class="md:hidden last-of-type:hidden">, </span><br class="hidden md:inline">
+                        <?php endif ?>
                     <?php endforeach ?>
                 </div>
             </div>
