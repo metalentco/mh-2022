@@ -4,9 +4,9 @@ return [
     'panel' =>[
         'install' => true
     ],
-    'api' => [
-        'allowInsecure' => true
-    ],
+    // 'api' => [
+    //     'allowInsecure' => true
+    // ],
     'hooks' => [
         'page.create:after' => function ($page) {
             if ( $page->parent() && $page->parent()->template() == 'gallery' ){
