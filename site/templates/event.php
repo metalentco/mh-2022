@@ -181,6 +181,17 @@
                             </div>
                         </div>
                         <?php endif ?>
+
+                        <?php if( $page->infos()->isNotEmpty() ): ?>
+                            <?php foreach( $page->infos()->toStructure() as $item ): ?>
+                                <div class="wavy-bottom">
+                                    <div class="flex justify-between pt-2 pb-1.5">
+                                        <dt><?= $item->title() ?></dt>
+                                        <dd><?= $item->text() ?></dd>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        <?php endif ?>
                     </dl>
 
                     <dl class="w-full sm:w-1/2">

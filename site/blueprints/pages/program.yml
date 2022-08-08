@@ -22,6 +22,7 @@ columns:
         headline: Anlässe (publiziert und Upcoming)
         type: pagesdisplay
         layout: table
+        limit: 120
         columns:
           date:
             label: Datum
@@ -30,8 +31,10 @@ columns:
           availability:
             label: Tickets
             value: "{{ page.availability.text }}"
+            width: 1/6
           status_event: 
             label: Status
+            width: 1/6
         query: page.children.filterBy('date', 'date >', 'today')
         search: true
       listed_past:

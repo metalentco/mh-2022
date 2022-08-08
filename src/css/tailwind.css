@@ -191,11 +191,11 @@
 
 
 
-.wavy-bottom{
+.wavy-bottom:not(:last-of-type){
     @apply after:content-[''] after:block after:w-full after:h-2 after:bg-chover;
 }
 
-.wavy-bottom:after{
+.wavy-bottom:not(:last-of-type):after{
     mask: url('../img/wave.svg');
     -webkit-mask: url('../img/wave.svg');
 }
