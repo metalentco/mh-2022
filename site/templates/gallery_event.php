@@ -5,19 +5,19 @@
 
         <link type="text/css" rel="stylesheet" href="/node_modules/lightgallery/css/lightgallery.css" />
 
-        <?php if( $page->gallery()->isNotEmpty() ): ?>
+        <?php if( $page->gallery_0()->isNotEmpty() ): ?>
         <style>
             .coverImage{
-                background-image: url( <?= $page->gallery()->first()->toFile()->resize(1000)->url() ?>);
+                background-image: url( <?= $page->gallery_0()->first()->toFile()->resize(1000)->url() ?>);
             }
             @media(min-width: 1024px){
                 .coverImage{
-                    background-image: url( <?= $page->gallery()->first()->toFile()->resize(1500)->url() ?>);
+                    background-image: url( <?= $page->gallery_0()->first()->toFile()->resize(1500)->url() ?>);
                 }
             }
             @media(min-width: 1536px){
                 .coverImage{
-                    background-image: url( <?= $page->gallery()->first()->toFile()->resize(2500)->url() ?>);
+                    background-image: url( <?= $page->gallery_0()->first()->toFile()->resize(2500)->url() ?>);
                 }
             }
 
@@ -71,7 +71,7 @@
     </head>
     <body class="bg-cbackground text-cbase">
         <?php snippet('header') ?>
-        <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top <?php if($page->gallery()->isNotEmpty()){ echo "coverImage"; } ?>">
+        <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top <?php if($page->gallery_0()->isNotEmpty()){ echo "coverImage"; } ?>">
             <!-- @konradm todo <div class="min-h-[90vh] w-full bg-[url('')]"> -->
             <div class="text-white mb-2 flex items-end justify-between w-full max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
                 <div>
@@ -102,7 +102,7 @@
                     <div id="lightgallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
                         <?php foreach ($page->gallery_0()->toFiles() as $image): ?>
                             <a href="<?= $image->resize(2500)->url() ?>" data-responsive="<?= $image->resize(800)->url() ?> 400, <?= $image->resize(1500)->url() ?> 1024," class="customLink">
-                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl" />
+                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl aspect-square object-cover" />
                             </a>
                         <?php endforeach ?>
                     </div>
@@ -122,7 +122,7 @@
                     <div id="lightgallery1" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
                         <?php foreach ($page->gallery_1()->toFiles() as $image): ?>
                             <a href="<?= $image->resize(2500)->url() ?>" data-responsive="<?= $image->resize(800)->url() ?> 400, <?= $image->resize(1500)->url() ?> 1024," class="customLink">
-                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl" />
+                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl aspect-square object-cover" />
                             </a>
                         <?php endforeach ?>
                     </div>
@@ -141,7 +141,7 @@
                     <div id="lightgallery2" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
                         <?php foreach ($page->gallery_2()->toFiles() as $image): ?>
                             <a href="<?= $image->resize(2500)->url() ?>" data-responsive="<?= $image->resize(800)->url() ?> 400, <?= $image->resize(1500)->url() ?> 1024," class="customLink">
-                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl" />
+                                <img src="<?= $image->resize(500)->url() ?>" alt="<?= $page->title() ?> &middot; <?= $site->title() ?>" class="rounded-xl aspect-square object-cover" />
                             </a>
                         <?php endforeach ?>
                     </div>

@@ -48,7 +48,7 @@
                             <a href="<?= $event->url() ?>">
                                 <figure class="mt-12">
                                     <div class="aspect-video bg-chover rounded-[2rem] lg:rounded-[4rem]">
-                                        <img class="grayscale rounded-[2rem] lg:rounded-[4rem] w-full object-cover" src="<?= $event->gallery()->toFiles()->first()->resize(2500)->url() ?>" alt="<?= $event->title() ?> &middot; <?= $site->title() ?>" />
+                                        <img class="grayscale rounded-[2rem] lg:rounded-[4rem] w-full object-cover" src="<?= $event->gallery_0()->toFiles()->first()->resize(2500)->url() ?>" alt="<?= $event->title() ?> &middot; <?= $site->title() ?>" />
                                     </div>
                                     <figcaption class="sm:ml-16 mt-2">
                                         <span class="text-2xl md:text-4xl xl:text-6xl 3xl:text-[6.2rem] font-sansC">
