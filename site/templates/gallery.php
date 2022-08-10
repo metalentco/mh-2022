@@ -44,7 +44,7 @@
 
                 <div class="-mt-10 max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6">
                     <div class="mt-24 lg:mt-32">
-                        <?php foreach($eventsGallery as $event): ?>
+                        <?php foreach($eventsGallery->limit(4) as $event): ?>
                             <a href="<?= $event->url() ?>">
                                 <figure class="mt-12">
                                     <div class="aspect-video bg-chover rounded-[2rem] lg:rounded-[4rem]">
