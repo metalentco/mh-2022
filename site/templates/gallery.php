@@ -124,7 +124,7 @@
                                         <span class="text-[1.6rem] font-sansC">
                                             <?= $eventDate->toDate('j.n.Y') ?>
                                         </span>
-                                        <span class="font-heading text-2xl text-clink"><?= $event->title() ?></span>
+                                        <span class="font-heading text-2xl text-clink uppercase"><?= $event->title() ?></span>
                                     <?= $linkEnd ?>
                                 </div>
                             <?php endforeach ?>

@@ -21,6 +21,21 @@
 
 
 <style>
+    .fill-cpalm{
+        fill: <?= page("home")->cpalm() ?>
+    }
+
+
+
+    .fill-cbrand{
+        fill: <?= page("home")->cbrand() ?>
+    }
+    .ll{
+        fill: <?= page("home")->cbrand() ?>;
+    }
+
+
+
     .text-cbackground{
         color: <?= page("home")->cbackground() ?>
     }
@@ -43,11 +58,9 @@
     .fill-cbase{
         fill: <?= page("home")->cbase() ?>
     }
-    .ll{
-        fill: <?= page("home")->cbase() ?>;
+    .border-cbase{
+        border-color: <?= page("home")->cbase() ?>
     }
-
-
 
 
     .text-clink{
@@ -61,6 +74,12 @@
     }
     .before\:bg-clink::before{
         background-color: <?= page("home")->clink() ?>
+    }
+    :root {
+        --underlineColor: <?= page("home")->clink() ?>
+    }
+    a:not(.customLink):hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='<?= str_replace("#","%23",page("home")->clink()); ?>' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
     }
 
 
@@ -81,17 +100,53 @@
     .wavy-bottom:after{
         background-color: <?= page("home")->chover() ?>
     }
+    .wavy-bottom:not(:last-of-type):after{
+        background-color: <?= page("home")->chover() ?>
+    }
+    
     .shadow-chover{
         box-shadow: '1rem 1rem 0 0 <?= page("home")->chover() ?>'
+    }
+
+
+    .flag-container:before{
+        background-color: <?= page("home")->cbase() ?>;
+    }
+    .flag{
+        background-color: <?= page("home")->cbase() ?>;
+        color: <?= page("home")->cbackground() ?>;
+    }
+
+    .linkAnimation{
+        background: linear-gradient(to right, <?= page("home")->chover() ?>, <?= page("home")->chover() ?> 50%, <?= page("home")->clink() ?> 50%);
+        display: inline;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: background-position 500ms ease;
+    }
+
+    .group:hover .linkAnimation{
+        background-position: 0 100%;
+    }
+
+
+    input:focus,
+    textarea:focus,
+    button[type="submit"]{
+        --tw-ring-offset-color: <?= page("home")->cbackground() ?> !important;
+        --tw-ring-color: <?= page("home")->chover() ?> !important;
     }
 
 
 
 
     @keyframes pulseletters{
-        0%   { fill: <?= page("home")->cbase() ?> }
+        0%   { fill: <?= page("home")->cbrand() ?> }
         10%   { fill: <?= page("home")->chover() ?> }
         20%  { fill: <?= page("home")->chover() ?> }
-        30%  { fill: <?= page("home")->cbase() ?> }
+        30%  { fill: <?= page("home")->cbrand() ?> }
     }
 </style>

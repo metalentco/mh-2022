@@ -5,8 +5,8 @@
 
                 <?php if( page() == "programm" && page('home')->stoerer()->isTrue() ): ?>
                     <a href="<?= page('home')->stoerer_link() ?>" class="customLink block rounded-full bg-chover w-32 h-32 sm:w-48 sm:h-48 text-center z-50 pointer-events-auto relative before:w-full before:h-full before:rounded-full before:bg-clink before:block before:absolute before:scale-0 hover:before:scale-100 before:transition before:duration-500 hover:rotate-[360deg] transition" <?php if( page('home')->stoerer_link()->isEmpty() ){echo "style='cursor:default'"; } ?>>
-                        <div class="m-auto top-1/2 -translate-y-1/2 relative">
-                            <div class="-skew-x-12 text-xl sm:text-3xl font-bold">
+                        <div class="m-auto top-1/2 -translate-y-1/2 relative -translate-x-0.5 pt-3">
+                            <div class="-skew-x-12 text-xl sm:text-3xl font-bold tracking-tighter">
                                 <div class="-rotate-12">
                                     <?= page('home')->stoerer_text() ?>
                                 </div>

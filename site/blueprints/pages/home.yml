@@ -32,29 +32,39 @@ columns:
               stoerer: true
           line-a:
             type: line
+          cpalm:
+            label: Farbe - Palme
+            type: colors
+            width: 1/3
+            required: true
+          cbrand:
+            label: Farbe - MÜHLE HUNZIKEN
+            type: colors
+            width: 1/3
+            required: true
           cbackground:
             label: Farbe - Hintergrund
             type: colors
             help: "\#9FAEA1"
-            width: 1/4
+            width: 1/3
             required: true
           cbase:
-            label: Farbe - Basis (Text)
+            label: Farbe - Basis (Text, Datum)
             type: colors
             help: "\#fff"
-            width: 1/4
+            width: 1/3
             required: true
           clink:
-            label: Farbe - Logo, Links, Menu
+            label: Farbe - Links, Menu
             type: colors
             help: "\#AD4F41"
-            width: 1/4
+            width: 1/3
             required: true
           chover:
             label: Farbe - Auszeichnungen
             type: colors
             help: "\#48714D"
-            width: 1/4
+            width: 1/3
             required: true
           header_image:
             label: Header-Bild

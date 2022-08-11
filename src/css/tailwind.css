@@ -96,10 +96,6 @@
         @apply font-bold text-xl;
     }
 
-    :root {
-        --underlineColor: #AD4F41;
-    }
-
     a:not(.customLink){
         background: linear-gradient(to bottom, var(--underlineColor) 0%, var(--underlineColor) 100%);
         background-position: 0 100%;
@@ -109,7 +105,6 @@
     }
 
     a:not(.customLink):hover {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23AD4F41' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
         background-position: 0 100%;
         background-size: auto 4px;
         background-repeat: repeat-x;
@@ -170,7 +165,7 @@
 }
 .form-inputs input:not([type="checkbox"]),
 .form-inputs textarea{
-    @apply pt-[0.8rem] pb-[0.65rem] mt-1 appearance-none min-w-0 w-full bg-white rounded-xl px-4 text-chover placeholder-gray-400 border-none focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover transition;
+    @apply pt-[0.8rem] pb-[0.65rem] mt-1 appearance-none min-w-0 w-full bg-white rounded-xl px-4 text-chover placeholder-gray-400 border-none focus:outline-none focus:ring-4 focus:ring-offset-4 transition;
 }
 
 .form-inputs .active{
@@ -192,7 +187,7 @@
 
 
 .wavy-bottom:not(:last-of-type){
-    @apply after:content-[''] after:block after:w-full after:h-2 after:bg-chover;
+    @apply after:content-[''] after:block after:w-full after:h-2;
 }
 
 .wavy-bottom:not(:last-of-type):after{
@@ -302,11 +297,11 @@
 }
 
 .flag-container{
-    @apply skew-x-12 before:w-1 before:bg-clink before:absolute before:h-12 sm:before:h-16 before:left-0 before:top-0 sm:before:-top-1 before:rounded-full before:z-10;
+    @apply skew-x-12 before:w-1 before:absolute before:h-12 sm:before:h-16 before:left-0 before:top-0 sm:before:-top-1 before:rounded-full before:z-10;
 }
 .flag{
-    @apply pt-3 pb-2 pl-3 pr-2 uppercase bg-clink flag-mask tracking-widest font-sansC rounded-md leading-none text-sm sm:text-lg leading-none sm:leading-none;
-  }
+    @apply pt-3 pb-2 pl-3 pr-2 uppercase flag-mask tracking-widest font-sansC rounded-md leading-none text-sm sm:text-lg leading-none sm:leading-none;
+}
 
 
 
@@ -382,7 +377,6 @@
 
 
 .ll{
-    fill: #FFFFFF;
     --delay: 0.1;
 }
 
@@ -430,12 +424,12 @@
     animation-delay: calc(var(--delay) * 13s);
 }
 
-@keyframes pulseletters{
+/* @keyframes pulseletters{
     0%   { fill: #FFFFFF; }
     10%   { fill: #48714D; }
     20%  { fill: #48714D; }
     30%  { fill: #FFFFFF; }
-}
+} */
 
 .marquee{
     animation: marquee 0.5s linear infinite;

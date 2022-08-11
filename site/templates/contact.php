@@ -65,7 +65,7 @@
                                 <div class="w-full">
                                     <div class="flex items-center my-6 md:mt-14 pt-0.5 md:mb-7">
                                         <div>
-                                            <input id="booking" type="checkbox" value="" class="w-10 h-10 inline-block text-clink bg-white border-none appearance-none rounded-lg focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover">
+                                            <input id="booking" type="checkbox" value="" class="w-10 h-10 inline-block text-clink bg-white border-none appearance-none rounded-lg focus:outline-none focus:ring-4 focus:ring-offset-4">
                                         </div>
                                         <div>
                                             <label for="booking" class="ml-3 font-heading uppercase text-3xl">Booking request</label>
@@ -101,7 +101,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="relative overflow-hidden group mt-3 bg-clink px-7 py-3 text-cbase uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover">
+                            <button type="submit" class="relative overflow-hidden group mt-3 bg-clink px-7 py-3 text-cbase uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4">
                                 <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Senden">Senden</span>
                                 <span class="group-hover:opacity-0">Senden</span>
                             </button>

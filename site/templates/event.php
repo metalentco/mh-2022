@@ -29,8 +29,8 @@
             <div class="relative mx-auto md:mx-0">
                 <?php if( $page->ticket()->isNotEmpty() ): ?>
                 <a href="<?= $page->ticket() ?>" type="submit" class="pointer-events-auto inline-block mx-auto customLink font-heading relative overflow-hidden group mt-3 md:mt-[3.8rem] bg-white px-7 py-3 text-clink uppercase rounded-xl focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover appearance-none">
-                    <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block" data-text="Ticket kaufen">Ticket kaufen</span>
-                    <span class="group-hover:opacity-0">Ticket kaufen</span>
+                    <span class="marquee after:content-[attr(data-text)] after:absolute after:px-1 after:left-full absolute hidden group-hover:inline inline-block text-cbase" data-text="Ticket kaufen">Ticket kaufen</span>
+                    <span class="group-hover:opacity-0 text-cbase">Ticket kaufen</span>
                 </a>
                 <?php endif ?>
             
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="grow">
-                    <h1 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] xl:pt-0 md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-6xl md:text-7xl xl:text-8xl 3xl:text-[7rem] -ml-2"><?= $page->title(); ?></h1>
+                    <h1 class="pt-0.5 sm:mt-[-0.05rem] md:mt-[-0.43rem] xl:pt-0 md:mt-[-0.3rem] xl:mt-[-0.4rem] leading-none text-6xl md:text-7xl xl:text-8xl 3xl:text-[7rem] -ml-2 drop-shadow-lg"><?= $page->title(); ?></h1>
                 </div>
                 <!-- <div class="mb-3 shrink-0 hidden sm:block relative">
                     <?php if( $page->ticket()->isNotEmpty() ): ?>
@@ -272,7 +272,7 @@
             .addeventatc:hover{
                 background-color: transparent;
                 font-size: inherit;
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23AD4F41' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='<?= str_replace("#","%23",page("home")->clink()); ?>' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
                 background-position: 0 100%;
                 background-size: auto 4px;
                 background-repeat: repeat-x;
