@@ -4,27 +4,32 @@
       {
         "date": "2000-01-15",
         "title":"John Trudell and Bad Dog",
-        "country":"CH"
+        "country":"CH",
+        "url":"/galerie/john-trudell-and-bad-dog"
       },
       {
         "date": "2000-02-03",
         "title": "Polo Hofer und die Schmetterband (CH)",
-        "country": "CH"
+        "country": "CH",
+        "url": ""
       },
       {
         "date": "2000-02-11",
         "title": "Shoppers",
-        "country": "CH"
+        "country": "CH",
+        "url": "/galerie/shoppers"
       },
       {
         "date": "2000-02-12",
         "title": "Romano Drom",
-        "country": "HU"
+        "country": "HU",
+        "url": ""
       },
       {
         "date": "2000-02-18",
         "title": "Jim Kahr Group",
-        "country": "US"
+        "country": "US",
+        "url": ""
       }
     ]
   }
