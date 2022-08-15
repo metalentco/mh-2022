@@ -334,19 +334,19 @@
                                         </div>
                                     </div>
                                     <?php if( $event->status_event()->isNotEmpty() ): ?>
-                                        <div class="absolute right-0 xl:-right-10 bottom-2 sm:bottom-5">
+                                        <div class="absolute right-0 xl:-right-10 bottom-0 sm:bottom-4">
                                             <div class="flag-container">
                                             <div class="flag"><?= $event->blueprint()->field('status_event')['options'][$event->status_event()->value()] ?></div>
                                             </div>
                                         </div>
                                     <?php elseif( $event->availability() != "available" ): ?>
-                                        <div class="absolute right-0 xl:-right-10 bottom-2 sm:bottom-5">
+                                        <div class="absolute right-0 xl:-right-10 bottom-0 sm:bottom-4">
                                             <div class="flag-container">
                                                 <div class="flag">Ausverkauft</div>
                                             </div>
                                         </div>
                                     <?php elseif( $event->location() == "openair" ): ?>
-                                        <div class="absolute right-0 xl:-right-10 bottom-2 sm:bottom-5">
+                                        <div class="absolute right-0 xl:-right-10 bottom-0 sm:bottom-4">
                                             <div class="flag-container">
                                                 <div class="flag">Open Air</div>
                                             </div>

@@ -1,8 +1,8 @@
 <footer class="text-cbase">
     <div class="max-w-7xl mx-auto px-3 md:px-6 mt-60">
-        <div class="max-w-md mx-auto text-center">
+        <div class="max-w-lg mx-auto text-center">
             <p class="uppercase font-heading tracking-wider text-cbase">Trage dich in den Newsletter ein</p>
-            <form class="mt-4 sm:flex sm:max-w-md">
+            <form class="mt-4 sm:flex sm:max-w-lg">
                 <label for="email-address" class="sr-only">E-Mail-Addresse</label>
                 <input type="email" name="email-address" id="email-address" autocomplete="email" required class="pt-[0.8rem] pb-[0.65rem] mt-3 appearance-none min-w-0 w-full bg-white rounded-xl px-4 text-chover placeholder-gray-400 border-none focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-offset-cbackground focus:ring-chover" placeholder="E-Mail-Adresse eingeben">
                 <div class="rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">

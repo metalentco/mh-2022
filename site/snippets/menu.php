@@ -1,16 +1,19 @@
 <script>
     function toggle(){
         document.getElementById("navigation").classList.toggle("hidden");
+        document.getElementsByTagName("body")[0].classList.toggle("fixed md:block");
+        document.getElementsByTagName("body")[0].classList.toggle("md:overflow-hidden");
+        document.getElementsByTagName("body")[0].classList.toggle("bg-clink");
     };
 </script>
 
 <!-- NAV -->
-<div class="top-0 w-full fixed h-full bg-clink z-50 text-cbase hidden" id="navigation">
+<div class="top-0 w-full fixed h-full bg-clink z-50 text-cbase hidden pointer-events-auto" id="navigation">
     <div class="fixed w-full z-30">
         <div class="relative">
             <div class="max-w-full 2xl:max-w-[140rem] mx-auto px-1 md:px-6 flex justify-between pt-2 md:pt-8 ">
                 <div>
-                    <a href="<?= $site->url() ?>" class="customLink customShake block">
+                    <a href="<?= $site->url() ?>" class="customLink customShake block pl-1">
                         <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 685" style="enable-background:new 0 0 445 685;" xml:space="preserve" class="w-10 md:w-20">
                             <path class="fill-cbase" d="M245.3,0.6c1,0,2.1,0.8,3.2,0.9c5.3,4.2,7.8,9.9,13.9,12.2c2.8,4.4,7.5,7.4,7.6,13c1.3,20.5-7,7.4,1.5,33.5
                                 c-4.1,5.9-0.7,11.7-6.4,16.8c0.2,9.2-3.4,18.2-5.3,26.8c0.7,8.7-7.1,6.9-2.9,16.6c1,0.3,2.4,1.6,3.1,2.8c3-2.8,7.3-3.9,10.1-6.4
@@ -51,28 +54,28 @@
                     </a>
                 </div>
                 <div class="mr-4">
-                    <a href="#" onclick="toggle()" class="customLink">
+                    <button onclick="toggle()">
                         <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-14 py-4 md:py-0 md:w-20 md:mt-4">
                             <path class="fill-cbase" d="M58.5892 67.3036C59.611 68.3345 60.0904 67.9407 60.6687 67.5535C61.247 67.1662 66.2202 61.5773 66.5275 60.6178C66.8349 59.6582 65.6714 58.5618 65.6714 58.5618C65.6714 58.5618 11.9136 2.71823 10.6713 1.92188C9.42888 1.12552 8.28851 1.97803 8.28851 1.97803C8.28851 1.97803 3.26062 6.94468 2.67031 8.05069C2.08 9.15669 2.07464 9.9756 2.65761 10.8765C3.24057 11.7773 58.5892 67.3036 58.5892 67.3036Z" fill="white"/>
                             <path class="fill-cbase" d="M2.95631 60.8871C2.95631 60.8871 2.18925 59.813 3.26186 58.7309L58.3492 3.15551C58.3492 3.15551 60.3767 1.82336 61.4374 2.89341L67.6703 9.18151C67.6703 9.18151 68.0864 9.91415 67.2465 11.2185C66.4066 12.5229 12.748 65.1445 11.9663 65.8361C11.1845 66.5278 10.4295 67.2279 9.36525 66.1542C6.33726 63.0994 4.80409 63.2146 2.95138 60.8822" fill="white"/>
                         </svg>                   
-                    </a>
-                </div>
-                <div class="hidden absolute p-16 bg-indigo-500 text-black rounded-full w-10 h-10 z-40">
-                    STÖRER
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
     <nav class="h-full py-32">
         <ul class="flex flex-col justify-center h-full text-center text-6xl sm:text-[5rem] md:text-[6rem] xl:text-[8rem]">
-
-
-
-
-
-
-
 
 
             <li class="relative">
@@ -109,4 +112,36 @@
             <?php endif ?>
         </ul>
     </nav>
+
+
+
+
+
+
+
+
+
+    <div class="fixed bottom-0 w-full z-30">
+        <div class="relative">
+            <div class="max-w-full 2xl:max-w-[140rem] mx-auto px-6 md:px-14 flex justify-between pb-5 md:pb-12 ">
+                <div class="flex items-center">
+                    <a href="<?= page('newsletter')->url() ?>" class="font-bold text-xl md:text-2xl md:-rotate-90 md:translate-y-12 origin-left">
+                        Newsletter
+                    </a>
+                </div>
+                <div class="flex md:flex-col space-x-4 md:space-x-0 md:space-y-4">
+                    <a href="https://www.instagram.com/muhle_hunziken" target="_blank" class="w-11 md:w-16 customLink">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <path d="M28 5.047C35.476 5.047 36.3627 5.075 39.3167 5.21033C46.9047 5.55567 50.449 9.156 50.7943 16.688C50.9297 19.6397 50.9553 20.5263 50.9553 28.0023C50.9553 35.4807 50.9273 36.365 50.7943 39.3167C50.4467 46.8417 46.9117 50.449 39.3167 50.7943C36.3627 50.9297 35.4807 50.9577 28 50.9577C20.524 50.9577 19.6373 50.9297 16.6857 50.7943C9.079 50.4467 5.55333 46.83 5.208 39.3143C5.07267 36.3627 5.04467 35.4783 5.04467 28C5.04467 20.524 5.075 19.6397 5.208 16.6857C5.55567 9.156 9.09067 5.55333 16.6857 5.208C19.6397 5.075 20.524 5.047 28 5.047V5.047ZM28 0C20.3957 0 19.4437 0.0326667 16.457 0.168C6.28833 0.634667 0.637 6.27667 0.170333 16.4547C0.0326667 19.4437 0 20.3957 0 28C0 35.6043 0.0326667 36.5587 0.168 39.5453C0.634667 49.714 6.27667 55.3653 16.4547 55.832C19.4437 55.9673 20.3957 56 28 56C35.6043 56 36.5587 55.9673 39.5453 55.832C49.7047 55.3653 55.37 49.7233 55.8297 39.5453C55.9673 36.5587 56 35.6043 56 28C56 20.3957 55.9673 19.4437 55.832 16.457C55.3747 6.29767 49.7257 0.637 39.5477 0.170333C36.5587 0.0326667 35.6043 0 28 0V0ZM28 13.622C20.0597 13.622 13.622 20.0597 13.622 28C13.622 35.9403 20.0597 42.3803 28 42.3803C35.9403 42.3803 42.378 35.9427 42.378 28C42.378 20.0597 35.9403 13.622 28 13.622ZM28 37.3333C22.8457 37.3333 18.6667 33.1567 18.6667 28C18.6667 22.8457 22.8457 18.6667 28 18.6667C33.1543 18.6667 37.3333 22.8457 37.3333 28C37.3333 33.1567 33.1543 37.3333 28 37.3333ZM42.9473 9.695C41.09 9.695 39.585 11.2 39.585 13.055C39.585 14.91 41.09 16.415 42.9473 16.415C44.8023 16.415 46.305 14.91 46.305 13.055C46.305 11.2 44.8023 9.695 42.9473 9.695Z" class="fill-cbase"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/MuhleHunziken" target="_blank" class="w-11 md:w-16 customLink">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <path d="M44.3333 0H11.6667C5.22433 0 0 5.22433 0 11.6667V44.3333C0 50.7757 5.22433 56 11.6667 56H44.3333C50.778 56 56 50.7757 56 44.3333V11.6667C56 5.22433 50.778 0 44.3333 0ZM37.3333 16.3333H32.844C31.409 16.3333 30.3333 16.9213 30.3333 18.4077V21H37.3333L36.778 28H30.3333V46.6667H23.3333V28H18.6667V21H23.3333V16.513C23.3333 11.795 25.816 9.33333 31.409 9.33333H37.3333V16.3333Z" class="fill-cbase"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
