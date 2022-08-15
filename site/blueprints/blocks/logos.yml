@@ -1,0 +1,23 @@
+name: Logos
+icon: dashboard
+preview: set.images
+fields:
+  set:
+    label: Bilder mit Text
+    type: structure
+    fields:
+      image:
+        label: Bild
+        type: files
+        query: model.images
+        multiple: false
+        layout: cards
+        size: tiny
+        empty: field.blocks.gallery.images.empty
+        width: 1/2
+        uploads:
+          template: blocks/image
+      text:
+        label: Bildbeschreibung
+        type: text
+        width: 1/2

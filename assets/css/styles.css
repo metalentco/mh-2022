@@ -1031,6 +1031,14 @@ a:not(.customLink):hover {
   margin: auto;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
+.m-6 {
+  margin: 1.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1246,6 +1254,14 @@ a:not(.customLink):hover {
   height: 1.75rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-40 {
+  height: 10rem;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1288,6 +1304,14 @@ a:not(.customLink):hover {
 
 .w-\[64\%\] {
   width: 64%;
+}
+
+.w-\[25\%\] {
+  width: 25%;
+}
+
+.w-\[23\%\] {
+  width: 23%;
 }
 
 .min-w-0 {
@@ -1475,6 +1499,12 @@ a:not(.customLink):hover {
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1505,6 +1535,10 @@ a:not(.customLink):hover {
 
 .rounded-\[50\%\] {
   border-radius: 50%;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .border {
@@ -1616,6 +1650,11 @@ a:not(.customLink):hover {
   fill: #fff;
 }
 
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1636,6 +1675,14 @@ a:not(.customLink):hover {
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-3 {
@@ -3185,6 +3232,30 @@ nav li a:hover,
 
   .md\:w-12 {
     width: 3rem;
+  }
+
+  .md\:w-\[23\%\] {
+    width: 23%;
+  }
+
+  .md\:w-\[25\%\] {
+    width: 25%;
+  }
+
+  .md\:w-\[33\%\] {
+    width: 33%;
+  }
+
+  .md\:w-\[33\.33\%\] {
+    width: 33.33%;
+  }
+
+  .md\:w-\[33\.4\%\] {
+    width: 33.4%;
+  }
+
+  .md\:w-\[33\.3\%\] {
+    width: 33.3%;
   }
 
   .md\:min-w-\[10rem\] {
