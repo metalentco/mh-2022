@@ -4,7 +4,7 @@
   <?php foreach ($block->images()->toFiles() as $image): ?>
   <figure class="mt-0">
     <a href="<?= $image->url() ?>" target="_blank" class="">
-        <img src="<?= $image->resize(500)->url() ?>" srcset="<?= $image->srcset([500, 1200]) ?>" alt="Mühle Hunziken" class="rounded-[2rem] sm:rounded-[1.5rem] aspect-video object-cover w-full">
+        <img src="<?= $image->resize(500)->url() ?>"  alt="Mühle Hunziken" class="rounded-[2rem] sm:rounded-[1.5rem] aspect-video object-cover w-full">
     </a>
   </figure>
   <?php endforeach ?>

@@ -38,7 +38,7 @@
         </div>
         <!-- <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover bg-top <?php if($page->cover()->isNotEmpty()){ echo "coverImage"; } ?>"> -->
         <div class="h-[75vh] md:h-[90vh] w-full bg-cover flex justify-end flex-col bg-chover relative overflow-hidden">
-            <div class="absolute pointer-events-none left-0 right-0 top-0 bottom-0 before:w-full before:h-1/2 before:bg-gradient-to-t before:from-black/30 before:z-10 before:absolute before:bottom-0 <?php if($page->cover_filter()->toBool()){ echo 'halftone'; } ?>">
+            <div class="absolute pointer-events-none left-0 right-0 top-0 bottom-0 eventGradient <?php if($page->cover_filter()->toBool()){ echo 'halftone'; } ?>">
                 <img class="w-full h-full object-cover object-top" src="<?php if($page->cover()->isNotEmpty()){ echo $page->cover()->toFile()->resize(1000)->url(); } ?>">
             </div>
             <div class="text-white mb-2 flex items-end justify-between w-full max-w-7xl 3xl:max-w-[120rem] mx-auto px-3 md:px-6 z-10">

@@ -316,6 +316,15 @@
 }
 
 
+.eventGradien{
+    display: none;
+}
+
+.eventGradient:before{
+    @apply w-full h-full z-10 absolute top-0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.3015800070028011) 0%, rgba(0,0,0,0) 33%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.29597776610644255) 100%);
+}
+
 
 
 .before\:animate-spinB-1::before{
