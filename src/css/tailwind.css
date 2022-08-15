@@ -315,14 +315,10 @@
     @apply pt-1.5 pb-1 pl-1 pr-1 sm:pt-3 sm:pb-2 sm:pl-3 sm:pr-2 uppercase flag-mask tracking-wide font-bold sm:font-normal sm:tracking-widest font-sansC rounded-md leading-none text-xs sm:text-sm sm:text-lg leading-none sm:leading-none;
 }
 
-
-.eventGradien{
-    display: none;
-}
-
 .eventGradient:before{
     @apply w-full h-full z-10 absolute top-0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.3015800070028011) 0%, rgba(0,0,0,0) 33%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.29597776610644255) 100%);
+    content: "";
+    background: linear-gradient(0deg, rgba(0,0,0,0.3015800070028011) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.29597776610644255) 100%);
 }
 
 
